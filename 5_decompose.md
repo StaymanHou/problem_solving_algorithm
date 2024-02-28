@@ -15,3 +15,11 @@ so that you don't get overwhelmed
 - Reduce complexity
 - Enhance flexibility
 - Improve performance
+
+# Debugging
+
+# Design Tech Stack
+
+# Troubleshooting System
+
+# Other General Decomposition
