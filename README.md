@@ -1,0 +1,1 @@
+# Stayman Problem Solving Algorithm
