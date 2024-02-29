@@ -1,6 +1,6 @@
 # Stayman Problem-Solving Algorithm
 
-This is a general purpose problem-solving algorithm primarily designed for technical problems.
+This is a general-purpose problem-solving algorithm primarily designed for technical problems.
 
 ## Warm-up Questions
 
