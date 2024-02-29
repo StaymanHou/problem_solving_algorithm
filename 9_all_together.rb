@@ -50,6 +50,7 @@ module ProblemSolver
     prototype_b # solve a simplified version of the problem
     borrow_code # when and how? make sure you understand the code
     one_at_a_time_a
+    dont_be_afraid_to_break_things # except for production environment
     one_solution_vs_best_solution
     temporary_solution_vs_best_practice
     raise UnderstandingOfProblemOrSolutionUpdated if needed
@@ -102,24 +103,6 @@ module ProblemSolver
   private
 
   ### Helper methods for problem identification start ###
-  def identify_root_problem
-    if problem.something_not_working_as_expected?
-      clarify_the_expected_behavior # Rule out the case where it's a feature not a bug
-      list_all_potential_causes
-      create_hypothesis_for_likely_root_cause
-      determine_the_info_required_to_test_the_hypothesis
-    elsif problem.develop_a_new_thing
-      identify_who_have_the_need
-      empathize_with_them
-      determine_if_there_is_a_different_need_and_require_solving_a_different_problem
-    else
-      ask_five_whys
-    end
-    raise UnderstandingOfProblemUpdated if needed
-
-    how_far_is_too_far_and_which_root_problem_to_stop?
-  end
-
   def check_domain_knowledge
     do_i_understand_the_problem? do
       can_i_envision_the_desired_input_and_output?
@@ -157,6 +140,24 @@ module ProblemSolver
       end
       raise UnderstandingOfProblemUpdated if needed
     end
+  end
+
+  def identify_root_problem
+    if problem.something_not_working_as_expected?
+      clarify_the_expected_behavior # Rule out the case where it's a feature not a bug
+      list_all_potential_causes
+      create_hypothesis_for_likely_root_cause
+      determine_the_info_required_to_test_the_hypothesis
+    elsif problem.develop_a_new_thing
+      identify_who_have_the_need
+      empathize_with_them
+      determine_if_there_is_a_different_need_and_require_solving_a_different_problem
+    else
+      ask_five_whys
+    end
+    raise UnderstandingOfProblemUpdated if needed
+
+    how_far_is_too_far_and_which_root_problem_to_stop?
   end
 
   def learn_it_fast!
@@ -200,7 +201,6 @@ module ProblemSolver
       prototyping
       api_usage
       syntax
-      dont_be_afraid_to_break_things # except for production environment
     end
     write_code_nicely do
       what_problem_does_it_solve?
@@ -224,6 +224,7 @@ module ProblemSolver
     typo_in_code?
     syntax_error?
     wrong_usage_of_language_feature?
+    wrong_usage_of_framework_feature?
     wrong_usage_of_3rd_party_api?
     bugs_in_3rd_party?
     wrong_understanding_of_how_existing_codebase_works?

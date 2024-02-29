@@ -12,8 +12,18 @@ Only by implementing a solution can we validate our grasp of the problem; And we
 
 Big picture & details
 
-don't get trapped in a rabbit hole
+Don't get trapped in a rabbit hole and lose the big picture
 
-hypothesis
+Don't get fascinated by the absctract stuff and become impractical or idealistic
+
+hypothesis, learn, verify
 
 grow & prune
+
+# Exit condition
+
+Problem solved
+
+Or no longer relevant
+
+[< Home](README.md) | [Next Chapter >](2_main.md)
