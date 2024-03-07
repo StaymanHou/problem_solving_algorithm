@@ -14,15 +14,13 @@ Before we get started, ask yourself the following questions.
 
 Hey there! So, I've put together this algorithm thing that's all about solving problems, especially in the tech world, but honestly, it can help with all sorts of stuff. It's like a roadmap for tackling issues, whether they're tech-related or not.
 
-I came up with this during a workshop for new engineers who are eager to sharpen their problem-solving skills. The idea is to show them that problem-solving is a skill you can apply across the board, not just in coding or whatever.
+I came up with this during a workshop for **new engineers who are eager to sharpen their problem-solving skills**. The idea is to show them that problem-solving is a skill you can apply across the board, not just in coding or whatever.
 
-Plus, it's great for experienced engineers who want to mentor the newbies but maybe don't have a structured way to do it. You know, those engineers who are awesome at fixing things but struggle to teach others how to do it.
+Plus, it's great for **experienced engineers who want to mentor the newbies** but maybe don't have a structured way to do it. You know, those engineers who are awesome at fixing things but struggle to teach others how to do it.
 
 And let's talk about schools for a sec. They teach us all sorts of stuff, but they don't really teach us how to problem-solve in a systematic way. It's like they're more interested in finding the natural-born problem-solvers instead of helping everyone become better at it. So, I put this together to level the playing field and help out those who need a bit more guidance in the problem-solving department.
 
-The algorithm is written in pseudo code (primarily following the Ruby syntax). Please do not take the code at its face value. It won't execute, nor will it make perfect semantic sense. I just happen to find it to be the most vehicle to express ideas such as recursions, inheritance, and hierarchical structures. If you don't feel confident reading code, don't worry. I'm gonna walkthrough the code line by line. Explain in plain English. Elaborate the idea with examples.
-
-The algorithm is presented in pseudo code, mainly adhering to Ruby syntax. However, it's essential to note that this code is not executable and may not adhere perfectly to semantic conventions. Rather, it serves as a tool for expressing concepts like recursion, inheritance, and hierarchical structures. If you're not comfortable with reading code, don't fret! I'll guide you through each line, explaining the ideas in simple terms and providing examples for clarity.
+The algorithm is written in pseudo code (primarily following the Ruby syntax). Please do not take the code at its face value. It won't execute, nor will it make perfect semantic sense. I just happen to find it to be the best vehicle to **express ideas such as recursions, inheritance, and hierarchical structures**. If you don't feel confident reading code, don't worry. I'm gonna walkthrough the code line by line. Explain in plain English. Elaborate the idea with examples.
 
 # Table of Content
 1. [Overview](1_overview.md)
