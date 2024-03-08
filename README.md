@@ -35,7 +35,9 @@ The algorithm is written in pseudo code (primarily following the Ruby syntax). P
 
 # Complete Algorithm Code
 
-[Here](9_all_together.rb)
+[Here](9_all_together.rb) you can find the final code.
+
+Along the workshop we will develop this pseudo code in an iterative manner, write it from scratch and growth it chapter by chapter. If you feel confident reading the code, feel free to go ahead and do so. If not, you can simply browse through the completed code without having to worry about understanding it.
 
 # Credits
 
