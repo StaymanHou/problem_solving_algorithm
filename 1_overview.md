@@ -26,7 +26,7 @@ As you shall see, the senarios would have different level of uncertainty and com
 
 ## 1.2 Pseudo Code
 
-TODO embed it here? or link to it if not possible
+https://github.com/StaymanHou/problem_solving_algorithm/blob/main/1_overview.rb#L1-L40
 
 Let's take a look at this code
 
@@ -195,7 +195,7 @@ P.S. Of course, if you do this after the work hours simply for the purpose of pr
 
 ### \[Tip 1.3.3\] Keep track of the problem
 
-The next tip which is conencted with the previous tip. One way to combat the solution-oriented mindset is to keep track of the problem. Keep asking yourself, what exact problem am I trying to solve as we make progress in the problem-solving. Evaluate the ROI of each step you take. Ask yourself how does this step contribute to the problem. We shall elaborate on this in the next section.
+The next tip which is conencted with the previous tip. One way to combat the solution-oriented mindset is to keep track of the problem. Keep asking yourself, what exact problem am I trying to solve as we make progress in the problem-solving. What kind of problems is this new thing going to solve as I learn it. What part of the problem is this solution going to solve for me? Is my current activity truely connected to the problem I'm trying to solve? Evaluate the ROI of each step you take. Ask yourself how does this step contribute to the problem. We shall elaborate on this in the next section.
 
 ## 1.4 Principle No.2 Hierarchical Thinking / Recursive & Iterative Process
 
@@ -236,27 +236,50 @@ If you've leanred data structure and algorithm, you will be able to tel that thi
 
 One more thing that we must talk about before we wrap up this chapter. We talked about the problem-oriented mindset. The problem-solving approach must be centered around solving the **PROBLEM**. We talked about that problem-solving is essentially an **interative** and **recursive** **tree traversal** process which demands **hierarchical thinking**. Now then, how do we know that we are done? When shall we stop?
 
-There are basically two cases. The problem is solved, and we are done. Or the problem is no longer relevant, and don't need to solve it anymore.
+There are basically two cases. Either the problem is solved, and we are done. Or the problem is no longer relevant, and don't need to solve it anymore.
 
 ### \[Checklist 1.5.1\] How do I know that the problem has been solved?
 
+There are several indicators that can signify the completion.
 
-pass test
-communicate
-fit into the bigger piece
+1. The solution passes tests. (Note here that we are not specifying what kind of tests (manual or automated) nor the coverage of the tests. We will discuss about this more later in chapter 7)
+2. The result has been communicated to the requester / stakeholders / user / customer and has got an affirmative response. (We shall cover this topic in chapter 8)
+3. In the case of solving a subproblem in a breakdown structure, being able to fit into the bigger piece is also an indicator.
 
-you can never know for sure
+With that being said, we should also be aware that we can never know for sure.
 
-Problem solved
+> \[Quote\] "Program testing can be used to show the presence of bugs, but never to show their absence." by Edsger Dijkstra
+
+Tests cannot prove to us the problem has been solved. Likewise, A "yes" by a person can't either.
+
+> \[Quote\] "Customers don't know what they want until they see it." by Steve Jobs. And I'd add "... until they see it, try it, and use it in all their use cases."
+
+The best we can say is that with these indicators we may consider a solution to have reached an acceptable or satisfactory level with certain degree of confidence. And nothing more.
 
 ### \[Checklist 1.5.2\] How do I know that the problem is no longer relevant?
 
-return false if the_requester_no_longer_needs_it
-return false if business_priorities_changed_and_the_problem_is_postponed
-return false if the_desired_outcome_is_obsolescent
-return false if failed_to_validate_the_demand
-return false if requirement_changed or understanding_of_the_requirement_changed
-return false if learned_that_the_solution_is_no_longer_feasible_or_viable
-return false if superior_solution_discovered
+On the opposite side, there are several indicators as well that can signal use to consider aborting the problem or the subproblem.
+
+1. The requester / user expressed that he/she no longer needs it
+2. The business priorities have changed and the problem has been postponed or deprioritized
+3. The desired outcome is obsolescent
+4. Failed to validate the demand
+5. Requirement has changed or the understanding of the requirement has changed
+6. Learned that the solution is no longer feasible or viable
+7. Superior solution has been discovered
+
+Generally speaking, there can be multiple factors, external change, demand change, business change, and perception change of the problem solver.
+
+Also, remember the fact that problem solving is recursive. So all these exit conditions can be applied to any subproblem at any granularity level.
+
+## 1.6 Chapter Summary
+
+In this chapter, we've discussed about the core nature of problem-solving, and derived the 3 fundemantal pricinples.
+
+1. Problem-solving is an activity centered around **problem**, hence it requires a **problem-oriented mindset**.
+2. Problem-solving is a **recursive and iterative** process, hence it requires **hierarchical thinking**.
+3. A recursive and iterative process requires at least one exit condition, hence we **must know when to stop**
+
+We will see these principles being applied later in different forms throughout the workshop.
 
 [< Home](README.md) | [Next Chapter >](2_main.md)
