@@ -26,7 +26,7 @@ As you shall see, the senarios would have different level of uncertainty and com
 
 ## 1.2 Pseudo Code
 
-https://github.com/StaymanHou/problem_solving_algorithm/blob/main/1_overview.rb#L1-L40
+https://github.com/StaymanHou/problem_solving_algorithm/blob/f8543d7dca936ccead6645f02e80572a0be9bd65/1_overview.rb#L1-L40
 
 Let's take a look at this code
 
@@ -149,6 +149,7 @@ Echoing the quote by Einstein. Understanding the problem at hand is crucial. The
 Another common pitfall for engineers and even good engineers is that we tend to get too obsessed with building that "perfect" solution or indulge in the enjoyment or the Dopamine generated from the "solving" activity itself. Yes, we may have understood the problem well enough, but as we build the solution we must always think about how this solution is connected to the problem so that we don't solve the problem for the sage of the solution.
 
 ![FunnyProjectFailure](assets/SomethingDefinitelyGetsLostInTransit.jpeg)
+> Source: https://www.pinterest.com/pin/22095854392198667/
 
 This exactly illustrates how a misalignment betweent the problem and the solution can backfire.
 
