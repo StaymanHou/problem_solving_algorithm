@@ -2,6 +2,8 @@
 
 This is a general-purpose problem-solving algorithm primarily designed for technical problems.
 
+[\[Chinese Edition | 中文版\]](README-cn.md)
+
 ## Warm-up Questions
 
 Before we get started, ask yourself the following questions.

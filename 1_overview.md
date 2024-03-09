@@ -26,7 +26,7 @@ Now imagine yourself in these four scenarios, each presenting its own unique cha
 
 > As a senior engineer/team lead, you are told that the business wants to step into the social media sector. The rough idea is to create an online platform in the form of a web app + a mobile app (think about Facebook, Twitter, Reddit) that targets a specific user segment. Now you need to turn that idea into a product.
 
-## 1.2 Pseudo Code
+## 1.2 Pseudo Code - The Model of Problem-Solving
 
 With the scenarios laid out, now let's take a look at the pseudo code which represents the algorithm of the problem-solving approach.
 
