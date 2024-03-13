@@ -52,8 +52,16 @@ No learn is going to be wasted. So don't be afraid of learning
 
 ## Desired Input and Output
 
+### solve it to what extend?
+
+## not always need to solve the root problem
+
 ## Exceptions
 
 # Deal with the unknown
+
+# conclude
+
+not just think. sometimes needs to take action
 
 [< Previous Chapter](2_main.md) | [Next Chapter >](4_build_solution.md)

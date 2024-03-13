@@ -48,9 +48,9 @@ solution_and_result = ProblemSolver.solve(Problem.new, is_root_problem: true)
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while some_condition
-      begin
+      begin # = 其他语言的try
         # ...
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = 其他语言的catch
         next
       end
     end
@@ -92,7 +92,7 @@ end
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while problem.still_relevant?
-      begin
+      begin # = 其他语言的try
         if problem.manageable?
           solution = self.build_solution(problem)
         else
@@ -103,7 +103,7 @@ module ProblemSolver
           end
         end
         return solution
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = 其他语言的catch
         if is_root_problem
           next
         else
@@ -158,7 +158,7 @@ end
 
 这正是问题和解决方案之间不匹配会适得其反的情况。
 
-就我个人而言，我喜欢解决难题并且享受其中。我认为那种思维上的锻炼自然地让我感到快乐，就像体育锻炼会增加多巴胺，许多人喜欢那样。我确实相信很多优秀的工程师都有类似的特质。
+就我个人而言，我喜欢解决难题并且享受其中。我认为那种思维上的锻炼自然地让我感到快乐，就像体育锻炼会增加多巴胺，许多人喜欢那样。我确实相信不少优秀的工程师都有类似的特质。
 
 同样，我相信对于很多优秀的工程师来说，工匠精神是我们珍视的。我相信在某种程度上，这反映了我们创造者上帝的形象的创造性和系统性本质。就像他根据它们的种类创建了东西，然后看着他的创造并说它是好的。
 

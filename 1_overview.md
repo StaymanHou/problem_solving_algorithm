@@ -48,9 +48,9 @@ Here we are also assuming that the given problem is the root problem by passing 
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while some_condition
-      begin
+      begin # = try in other programming languages
         # ...
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = catch in other programming languages
         next
       end
     end
@@ -92,7 +92,7 @@ This corresponds to our 3rd fundamental principle. **Exit Condition**. (I know t
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while problem.still_relevant?
-      begin
+      begin # = try in other programming languages
         if problem.manageable?
           solution = self.build_solution(problem)
         else
@@ -103,7 +103,7 @@ module ProblemSolver
           end
         end
         return solution
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = catch in other programming languages
         if is_root_problem
           next
         else
@@ -158,7 +158,7 @@ Another common pitfall for engineers and even good engineers is that we tend to 
 
 This exactly illustrates how a misalignment between the problem and the solution can backfire.
 
-Personally, I love solving puzzles and enjoy it. That mental exercise just naturally generates happiness in me, I guess just like how physical exercise boosts Dopamine and many enjoy that. I do believe a lot of good engineers share a similar trait.
+Personally, I love solving puzzles and enjoy it. That mental exercise just naturally generates happiness in me, I guess just like how physical exercise boosts Dopamine and many enjoy that. I do believe quite a few good engineers share a similar trait.
 
 Likewise, I believe that to a lot of good engineers, craftsmanship is something we hold dear to our hearts. And I believe that in a way it reflects the creative and systematic nature of the image of our creator God. Just like he created things according to their kinds, then looked at his creation and said it was good.
 
@@ -233,7 +233,7 @@ Just like we've already mentioned in the previous tips. Yes, we need to act loca
 
 When we put these two dimensions together, the process of problem-solving is essentially growing, pruning, and growing, and pruning, a tree, over and over again. We start with the problem itself as the root (sometimes the root will also grow but that's for later). It branches out as we decompose the problem into subproblems in the form of steps, options, factors, hypotheses, etc one level after another. Add or prune branches as we learn. Maybe some branches turn out to be not feasible. Maybe another branch is superior. The tree shrinks and grows back, until we either reach an absolute dead end, or all branches reach leaves.
 
-![](assets/problem-tree-example-1.jpg)
+![problem-tree-example](assets/problem-tree-example-1.jpg)
 > Source: Bulletproof Problem Solving: The One Skill That Changes Everything
 
 If you've learned data structure and algorithms, you will be able to tell that this is essentially a tree traversal problem. Of course, depending on the nature of the problem at hand as well as our experience and skills, the type of tree may vary greatly. That in turn will call for different types of search strategies like depth-first search (DFS) and breadth-first search (BFS). What's the optimal strategy you ask? There's no one-size-fits-all all. We shall investigate this in chapter 7.
