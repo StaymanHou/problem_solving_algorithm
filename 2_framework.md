@@ -1,3 +1,5 @@
+<sub>v0.1</sub>
+
 # 2. The 6-Step Approach - The Problem-Solving Framework
 
 ## 2.1 Intro
@@ -108,17 +110,92 @@ The second misconception is believing that communicating the solution and result
 
 These 2 topics are covered more in details in other workshops, but we shall still touch on these in Chapter 8.
 
-## conclude
+## Conclude
 
-6 step each node
+Now that we've introduced the 6-step framework, we can combine it with the iterative & recursive principle that we've learned in the previous chapter.
 
-pivot, random order
+TODO insert animated svg here of a tree traversal
 
-examples
+What's happening here is essentially following the 6 steps for each node as we grow, prune, revise, traverse, and retract through the tree. It may seem chaotic but if you look at it carefully you can see order. Unfortunately I cannot provide you with an SOP that you can simply follow alone each step and get any problem solved, because in its very nature problem-solving is an art of balancing various activities including discovery, learning, brainstorming, research, hypothesising. validating, building, testing, and more. We may skip or simplify certain steps or activities for certain problems, while invest a ton of effort in the same steps or activities for other problems.
 
-5 + 4 * 3 ^ 2 = ?
+## See it in action / examples
+
+Let's see how this framework works with examples before we wrap up the chapter.
+
+### Simple Math Problem
+
+Again, imaging now you are a 2nd grader. You just learned how to do multiplication. Now you are given this problem `5 + 4 * 3 ^ 2 = ?`.
+
+**Step 1.1 - Identify Problem (5 + 4 * 3 ^ 2 = ?)** In this context, we can assume the problem itself is the root problem. We have some idea about how the output will look like, most likely a number. We can partially understand the problem and its building blocks. We know the number `5`, `4`, `3`, and `2`. We are familar with the `+` operator. We just learned the `*` operator. However, we aren't quite sure about this `^` thing. At the moment your teach isn't around, so you can't ask about it. However we can still make an informed guess that it's something similar to `+` and `*`. It probably takes the two numbers on both sides and does something to produce another number. The other important building block we kinda know is the way we should decompose the problem. We basically need to take 2 numbers with 1 operator at a time, replace them with the result, calculate the next pair in the recursive manner.
+
+**Step 1.2 - Decompose (5 + 4 * 3 ^ 2 = ?)** Given our understanding of the problem together with some assumptions, now we start to decompose it. Of course, as a 2nd grader, we cannot just see the answer right away. (I know some of you may be able to so as an adult lol). Therefore, we need to decompose the problem into subproblems that's managable. We know that the order of operations should be from left to right if there's no parentheses. (I know that some of you is already shouting that we should be multiplication first, but we are just a 2nd grader who just learned multiplication) So the problem gets decomposed into `5 + 4 = x`, `x * 3 = y`, `y ^ 2 = ?`.
+
+We will skip the prioritization step as it's not that relevant in this entire problem.
+
+**Step 2.1.1 - Identify Problem (5 + 4)** This subproblem is pretty straightforward. **Step 2.1.2 - Build Solution** Do the simple math and we get `9`. And we skip the testing step for most of the subproblems.
+
+**Step 2.2.1 - Identify Problem (9 * 3)** We just learned multiplcation so we know what we should do about it. **Step 2.2.2 - Build Solution** Do the math and we get `27``.
+
+**Step 2.3.1 - Identify Problem (27 ^ 2)** Now we are stuck. We don't know what this `^` thing does. But, hay! Teach's back! Let's ask him. So asked hime what `y ^ 2` does? He told us that y ^ 2 is essentially y * y. And hay! We already learned multiplication! Now we understand the problem. We can do this!
+
+**Step 2.1.3 + 2.2.3 - Test (5 + 4 * 3)** Since the teacher is here, we might as well ask him to verify our solution of the other subproblems so far. And obviousely the teacher points out that multiplication takes precedence over addition. We totally forgot that fact, but it's ok. We just learn it so we need practice.
+
+Note that there are a couple of things happening here!
+- **Recursion**. We just jumped out of the subproblem `27 ^ 2` before completing it. That's an example of how this 6-step framework can go out of order due to the recursive nature.
+- A very common mistake just took place. When asking questions, we stripped them out of context. The teach didn't realize that both questions are part of a bigger problem. We will see the consequence very soon. Also, we will address common mistake in more details in a later chapter.
+
+All right. Now that we've gained some new understanding of the problem, it's pretty obviouse that we need to **iterate**.
+
+**Step 1.1 (2nd Try) - Identify Problem (5 + 4 * 3 ^ 2 = ?)** This time around we need to keep in mind the order of operations. Also we know that `^` is basically multipling the preceding number by itself.
+
+**Step 1.2 (2nd Try) - Decompose (5 + 4 * 3 ^ 2 = ?)** With the new udnerstanding the problem gets decomposed into `4 * 3 = x`, `5 + x = y`, `y ^ 2 = ?`
+
+**Step 1.3 (2nd Try) - Build Solution (5 + 4 * 3 ^ 2 = ?)** Let's skip some details here. With the new breakdown, our solution will be as follow. `4 * 3 = 12`, `5 + 12 = 17`, `17 ^ 2 = 17 * 17 = 289`. `289` it is!
+
+**Step 1.4 (2nd Try) - Test (5 + 4 * 3 ^ 2 = ?)** Yea, we got the solution. We rushed to the teacher. Presented the problem and our solution. Oops. The mistake we just made when asking the questions just backfired. The teacher obviously points out that exponentiation takes even higher precedence over multiplication.
+
+Time to iterate again.
+
+**Step 1.1 (3rd Try) - Identify Problem (5 + 4 * 3 ^ 2 = ?)** Now we've learned that we should do `^` first.
+
+**Step 1.2 (3rd Try) - Decompose (5 + 4 * 3 ^ 2 = ?)** `3 ^ 2 = x`, `4 * x = y`, `5 + y = ?`
+
+**Step 1.3 (3rd Try) - Build Solution (5 + 4 * 3 ^ 2 = ?)** `3 ^ 2 = 6`, `4 * 6 = 24`, `5 + 24 = 29`
+
+**Step 1.4 (3rd Try) - Test (5 + 4 * 3 ^ 2 = ?)** We show our solution yet again to the teacher, and finally we got it right.
+
+**Step 1.5 (3rd Try) - Retrospect (5 + 4 * 3 ^ 2 = ?)** Lesson learned. We should always pay attention to precedence / order of operations. Bonus. We need to improve our way of asking questions which could have helped us from one iteration.
+
+(Note that we skipped prioritization for the entire problem. We also skipped analysis and communication.)
+
+### Scenario A
+
+Take a look at Scenario A in Chapter 1. Since we just went throught the first math example, I'll skip the parts that are very similar and leave it as your homework.
+
+**Step 1.1 - Identify Problem** After being assigned the task, we may first want to ask why each user has 3 balances instead of 1. That will help us to understand the background of the task. Understanding the unique use cases of each type of balances can give us some context. Next thing would be to think through the inputs and outputs. In terms of the format, we may want to confirm if all the numbers would be in USD and presented as decimals, because if we need to involve other currencies, the problem will be different as we will need to consider exchange rates and stuff. Let's say we've confirmed that. Finally, since we now have a rough understanding of the problem and its background, it's time to consider building blocks. This task does not involve any 3rd-party libraries, it's a pretty standalone function. The only knowledge needed to build the solution is the usage of the programming language.
+
+**Step 1.2 - Build Solution** Skipping some steps here. We thought we are ready to build the solution, but we start to feel puzzled. How this business logic should be? Which balance should I deduct from? What if there's not enough balance? What if all balances have enough? How about some do some don't? It turned out that we still don't have enough understanding of the problem!
+
+**Step 1.1 (2nd Try) - Identify Problem** Yes, we know the format of the inputs and outputs, but we need some actual test cases to help us walk through the logic. The scenario detail already gave us one, but we need more. Let's start with that first. So we need to deduct a total of $1,000 from $100 gift, $500 debit, and $0/$2,000 credit. Which balance should we deduct first? We may ask our manager. And we learned that we should always deduct from gift first whenever there's something available, next debit, and last credit. So starting with $1,000. We deduct $100 from gift, and we have $900 left. Then deduct $500 from debit, and we have $400 left. Last, deduct $400 from credit. Yea, we are done. We may then decide to come up with more "test cases" to verify that we have truely understood the problem and the logic we need to implement. Let's say we ended up with 10 test cases covering different situations. (Don't think of test cases as test code that can be automated. Test cases can be manually tested as well.)
+
+**Step 1.2 (2nd Try) - Decompose** 
+
+**Step 1.3 (2nd Try) - Prioritize** 
+
+
+**Step 1.4 (2nd Try) - Build Solution**
+
+**Step 1.5 (2nd Try) - Test & Analyze** esp. Analyze
+
+**Step 1.6 (2nd Try) - Retrospect & Commuinicate** esp. Commuinicate
+
+
+
+## Homework
 
 Scenario A
+
+Another recent task of yours.
 
 
 [< Previous Chapter](1_overview.md) | [Next Chapter >](3_identify_problem.md)

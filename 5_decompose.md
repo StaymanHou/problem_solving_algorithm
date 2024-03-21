@@ -1,3 +1,5 @@
+<sub>v0.1</sub>
+
 # manageable (sub)problem
 
 TODO Granular enough (no more / no less) to solve the problem at hand

@@ -1,3 +1,5 @@
+<sub>v0.1</sub>
+
 # retrospect
 
 Set aside time to retrospect

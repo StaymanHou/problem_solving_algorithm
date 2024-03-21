@@ -1,3 +1,5 @@
+<sub>v0.1</sub>
+
 show several examples and see the expected outcome by applying different strategies.
 
 # create_dummy_outputs_and_get_feedback_to_align_expectations

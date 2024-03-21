@@ -1,3 +1,5 @@
+<sub>v0.1</sub>
+
 # Check Domain Knowledge
 
 ## Do I understand the problem?
@@ -25,6 +27,8 @@
 ### Training
 
 ### Ask
+
+Give context and background, check the math example in Chapter 2
 
 ### Study
 
@@ -64,4 +68,4 @@ No learn is going to be wasted. So don't be afraid of learning
 
 not just think. sometimes needs to take action
 
-[< Previous Chapter](2_main.md) | [Next Chapter >](4_build_solution.md)
+[< Previous Chapter](2_framework.md) | [Next Chapter >](4_build_solution.md)

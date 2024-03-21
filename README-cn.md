@@ -1,3 +1,5 @@
+<sub>v0.1</sub>
+
 # Stayman Problem-Solving Algorithm
 
 这是一个通用的问题解决算法，主要设计用于技术问题。
@@ -26,7 +28,7 @@
 
 # 目录
 1. [概述](1_overview-cn.md)
-2. [主要问题解决步骤](2_main-cn.md)
+2. [问题解决的大框架](2_framework-cn.md)
 3. [识别问题](3_identify_problem-cn.md)
 4. [构建解决方案](4_build_solution-cn.md)
 5. [分解](5_decompose-cn.md)

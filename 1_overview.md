@@ -1,3 +1,5 @@
+<sub>v0.1</sub>
+
 # 1. Overview - Unlocking the Secrets of Problem-Solving
 
 In this chapter, we'll look at the nature of problem-solving and see the most fundamental principles.
@@ -12,7 +14,7 @@ Now imagine yourself in these four scenarios, each presenting its own unique cha
 
 ### Scenario A. Implement a Relatively Simple and Standalone Piece of Code
 
-> As a developer you are tasked to implement a portion of the payment module of a self-serve advertising system (think about something like Google Ads where users can place orders to launch their ad campaign on Google's platform). Suppose that each user has 3 balances, namely gift balance, debit balance, and credit balance (with a credit limit). Gift balance holds the dollar amount of the promos a user has claimed, such as new user coupons, or seasonal stuff (think about using a gift card). Debit balance holds the amount of money a user has deposited to the system which then he/she can spend towards campaign purchases (think about using a debit card). Credit balance holds the amount of credits used towards campaign purchases where the due amount would need to be paid in a certain amount of time (think about using a credit card). The portion you are going to implement. Given the total amount of a requested campaign purchase (e.g. $1,000) and the current balances of the user (e.g. $100 gift, $500 debit, $0/$2,000), throw an error if the balances are not enough to make the purchase, otherwise, return the amounts need to be charged from each balance (e.g. $100 from gift balance, $500 from debit balance, $400 from credit balance).
+> As a developer you are tasked to implement a portion of the payment module of a self-serve advertising system (think about something like Google Ads where users can place orders to launch their ad campaign on Google's platform). Suppose that each user has 3 balances, namely gift balance, debit balance, and credit balance (with a credit limit). Gift balance holds the dollar amount of the promos a user has claimed, such as new user coupons, or seasonal stuff (think about using a gift card). Debit balance holds the amount of money a user has deposited to the system which then he/she can spend towards campaign purchases (think about using a debit card). Credit balance holds the amount of credits used towards campaign purchases where the due amount would need to be paid in a certain amount of time (think about using a credit card). The portion you are going to implement. Given the total amount of a requested campaign purchase (e.g. $1,000) and the current balances of the user (e.g. $100 gift, $500 debit, $0/$2,000 credit), throw an error if the balances are not enough to make the purchase, otherwise, return the amounts need to be charged from each balance (e.g. $100 from gift balance, $500 from debit balance, $400 from credit balance).
 
 ### Scenario B. Add or Change a Feature to a Website That You May or May Not Be Familiar with
 
@@ -42,7 +44,7 @@ This cryptic snippet is our entry point into the world of problem-solving. Here 
 
 This corresponds to our very first fundamental principle. **Problem-Oriented Mindset**.
 
-Here we are also assuming that the given problem is the root problem by passing `is_root_problem: true`. We'll get to this topic later in chapter 3. There are a lot of cases where the problem presented to us may not be the actual / root problem we need to solve. Here let's just stick to the assumption that it IS the root problem.
+Here we are also assuming that the given problem is the root problem by passing `is_root_problem: true`. We'll get to this topic later in Chapter 3. There are a lot of cases where the problem presented to us may not be the actual / root problem we need to solve. Here let's just stick to the assumption that it IS the root problem.
 
 ```ruby
 module ProblemSolver
@@ -147,7 +149,7 @@ The very core of problem-solving is **PROBLEM** not "solving" or "solution". I'v
 
 ### \[Tip 1.3.1\] Set aside time to understand and evaluate the problem
 
-Echoing the quote by Einstein. Understanding the problem at hand is crucial. The entire problem-solving activity is centered around the problem. Before you even start solving it, take some time, maybe read the problem statement twice, maybe talk to the person who requested it, maybe take a walk and reflect on the problem. I'll just stop since again we will come back to this subject later in chapter 3.
+Echoing the quote by Einstein. Understanding the problem at hand is crucial. The entire problem-solving activity is centered around the problem. Before you even start solving it, take some time, maybe read the problem statement twice, maybe talk to the person who requested it, maybe take a walk and reflect on the problem. I'll just stop since again we will come back to this subject later in Chapter 3.
 
 ### \[Tip 1.3.2\] Avoid solution-oriented mindset
 
@@ -162,7 +164,7 @@ Personally, I love solving puzzles and enjoy it. That mental exercise just natur
 
 Likewise, I believe that to a lot of good engineers, craftsmanship is something we hold dear to our hearts. And I believe that in a way it reflects the creative and systematic nature of the image of our creator God. Just like he created things according to their kinds, then looked at his creation and said it was good.
 
-However, as much as I believe that this attitude is important to the success of an engineer and that the pursuit of perfection is essential, making sure that your solution solves the problem, nothing more nothing less, and finding that balance is also critical in the practical setting. We will talk about this more in chapter 4.
+However, as much as I believe that this attitude is important to the success of an engineer and that the pursuit of perfection is essential, making sure that your solution solves the problem, nothing more nothing less, and finding that balance is also critical in the practical setting. We will talk about this more in Chapter 4.
 
 > \[Example\] Image a colleague comes to you asking you to help him/her find the greatest number in a file. BTW, it's likely to be just a one-time thing. Let's say the following code is what you come up with.
 
@@ -236,7 +238,7 @@ When we put these two dimensions together, the process of problem-solving is ess
 ![problem-tree-example](assets/problem-tree-example-1.jpg)
 > Source: Bulletproof Problem Solving: The One Skill That Changes Everything
 
-If you've learned data structure and algorithms, you will be able to tell that this is essentially a tree traversal problem. Of course, depending on the nature of the problem at hand as well as our experience and skills, the type of tree may vary greatly. That in turn will call for different types of search strategies like depth-first search (DFS) and breadth-first search (BFS). What's the optimal strategy you ask? There's no one-size-fits-all all. We shall investigate this in chapter 7.
+If you've learned data structure and algorithms, you will be able to tell that this is essentially a tree traversal problem. Of course, depending on the nature of the problem at hand as well as our experience and skills, the type of tree may vary greatly. That in turn will call for different types of search strategies like depth-first search (DFS) and breadth-first search (BFS). What's the optimal strategy you ask? There's no one-size-fits-all all. We shall investigate this in Chapter 7.
 
 ## 1.5 Principle No.3 Exit Condition / Know When to Stop
 
@@ -248,8 +250,8 @@ There are basically two cases. Either the problem is solved, and we are done. Or
 
 Several indicators can signify the completion.
 
-1. The solution passes tests. (Note here that we are not specifying what kind of tests (manual or automated) nor the coverage of the tests. We will discuss this more later in chapter 7)
-2. The result has been communicated to the requester / stakeholders / user / customer and has received an affirmative response. (We shall cover this topic in chapter 8)
+1. The solution passes tests. (Note here that we are not specifying what kind of tests (manual or automated) nor the coverage of the tests. We will discuss this more later in Chapter 7)
+2. The result has been communicated to the requester / stakeholders / user / customer and has received an affirmative response. (We shall cover this topic in Chapter 8)
 3. In the case of solving a subproblem in a breakdown structure, being able to fit into the bigger piece is also an indicator.
 
 With that being said, we should also be aware that we can never know for sure.
@@ -288,4 +290,4 @@ In this chapter, we've discussed about the core nature of problem-solving and de
 
 We will see these principles being applied later in different forms throughout the workshop.
 
-[< Home](README.md) | [Next Chapter >](2_main.md)
+[< Home](README.md) | [Next Chapter >](2_framework.md)

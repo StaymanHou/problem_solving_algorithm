@@ -1,3 +1,5 @@
+<sub>v0.1</sub>
+
 # Stayman Problem-Solving Algorithm
 
 This is a general-purpose problem-solving algorithm primarily designed for technical problems.
@@ -26,7 +28,7 @@ The algorithm is written in pseudo code (primarily following the Ruby syntax). P
 
 # Table of Content
 1. [Overview](1_overview.md)
-2. [Main Problem-Solving Steps](2_main.md)
+2. [The Problem-Solving Framework](2_framework.md)
 3. [Identify Problem](3_identify_problem.md)
 4. [Build Solution](4_build_solution.md)
 5. [Decompose](5_decompose.md)
