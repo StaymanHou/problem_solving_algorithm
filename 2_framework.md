@@ -144,7 +144,7 @@ Note that there are a couple of things happening here!
 - **Recursion**. We just jumped out of the subproblem `27 ^ 2` before completing it. That's an example of how this 6-step framework can go out of order due to the recursive nature.
 - A very common mistake just took place. When asking questions, we stripped them out of context. The teach didn't realize that both questions are part of a bigger problem. We will see the consequence very soon. Also, we will address common mistake in more details in a later chapter.
 
-All right. Now that we've gained some new understanding of the problem, it's pretty obviouse that we need to **iterate**.
+All right. Now that we've gained some new understanding of the problem, it's pretty obviouse that we need to **iterate**. Also note that we started with assumptions / hypotheses. We may or may not have realized that. So far, we've verified and corrected some of those, and learned something new. That signals us to pivot.
 
 **Step 1.1 (2nd Try) - Identify Problem (5 + 4 * 3 ^ 2 = ?)** This time around we need to keep in mind the order of operations. Also we know that `^` is basically multipling the preceding number by itself.
 
@@ -154,7 +154,7 @@ All right. Now that we've gained some new understanding of the problem, it's pre
 
 **Step 1.4 (2nd Try) - Test (5 + 4 * 3 ^ 2 = ?)** Yea, we got the solution. We rushed to the teacher. Presented the problem and our solution. Oops. The mistake we just made when asking the questions just backfired. The teacher obviously points out that exponentiation takes even higher precedence over multiplication.
 
-Time to iterate again.
+Time to **iterate** again. Note again the hypothesis → verify → learn → pivot pattern.
 
 **Step 1.1 (3rd Try) - Identify Problem (5 + 4 * 3 ^ 2 = ?)** Now we've learned that we should do `^` first.
 
