@@ -211,9 +211,9 @@ Now that we've learned the lessons from Einstein's quote, let's take a look at t
 
 > \[Quote by ChatGPT\] Only by implementing a solution can we validate our grasp of the problem; And we learn more by doing than by simply thinking about a problem. 
 
-### \[Pattern 1.4.1\] Hypothesis > Verify > Learn > Pivot
+### \[Pattern 1.4.1\] Hypothesis → Verify → Learn → Pivot
 
-As much as we need to make the effort to understand the problem and center our problem-solving approach around it, our perception of the problem can always be biased. We learn more about the problem as we try to solve it and sometimes even by putting together a wrong solution. Therefore, problem-solving is an iterative process. Until our solution is proven, we always live with assumptions. Assumptions of the problem. Assumptions of the breakdown. Assumptions of the solution and its components. This iterative process brings us closer and closer to the real problem and the real solution as we validate or correct our assumptions. We should not just get fascinated by the high-level and abstract stuff to the point where we become impractical or idealistic. Problem-solving = hypothesis > verify > learn > pivot. The faster you can iterate, the faster you can solve the problem.
+As much as we need to make the effort to understand the problem and center our problem-solving approach around it, our perception of the problem can always be biased. We learn more about the problem as we try to solve it and sometimes even by putting together a wrong solution. Therefore, problem-solving is an iterative process. Until our solution is proven, we always live with assumptions. Assumptions of the problem. Assumptions of the breakdown. Assumptions of the solution and its components. This iterative process brings us closer and closer to the real problem and the real solution as we validate or correct our assumptions. We should not just get fascinated by the high-level and abstract stuff to the point where we become impractical or idealistic. Problem-solving = hypothesis → verify → learn → pivot. The faster you can iterate, the faster you can solve the problem.
 
 ### \[Pattern 1.4.2\] Recursion / Decomposition and Synthesis
 
