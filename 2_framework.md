@@ -178,8 +178,8 @@ Take a look at Scenario A in Chapter 1. Since we just went throught the first ma
 
 **Step 1.1 (2nd Try) - Identify Problem** Yes, we know the format of the inputs and outputs, but we need some actual test cases to help us walk through the logic. The scenario detail already gave us one, but we need more. Let's start with that first. So we need to deduct a total of $1,000 from $100 gift, $500 debit, and $0/$2,000 credit. Which balance should we deduct first? We may ask our manager. And we learned that we should always deduct from gift first whenever there's something available, next debit, and last credit. So starting with $1,000. We deduct $100 from gift, and we have $900 left. Then deduct $500 from debit, and we have $400 left. Last, deduct $400 from credit. Yea, we are done. We may then decide to come up with more "test cases" to verify that we have truely understood the problem and the logic we need to implement. Let's say we ended up with 10 test cases covering different situations. (Don't think of test cases as test code that can be automated. Test cases can be manually tested as well.)
 
-|    | Inputs |         |        |              |               | Outputs |
-| -- | ------ | ------- |
+|    | Inputs |         |        |              |               | Outputs |    |        |       |
+| -- | ------ | ------- | ------ | ------------ | ------------- | ---- | ----- | ------ | ----- |
 | ID | Gift   | Debit   | Credit | Credit Limit | Campaign Cost | Gift | Debit | Credit | Error |
 | 1  | 100    | 900     | 0      | 0            | 1000          | 0    | 0     | 0      |       |
 | 2  | 100    | 1200    | 0      | 0            | 1000          | 0    | 300   | 0      |       |
