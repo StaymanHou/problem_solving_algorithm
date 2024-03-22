@@ -8,12 +8,12 @@ We talked about the model and the principles of problem-solving. In this chapter
 
 Here we outline the 6 steps first.
 
-- Identify Problem
-- Decompose
-- Prioritize
-- Build Solution
-- Test & Analyze
-- Retrospect & Communicate
+- **Identify Problem**
+- **Decompose**
+- **Prioritize**
+- **Build Solution**
+- **Test & Analyze**
+- **Retrospect & Communicate**
 
 ![6-Step Framework Diagram](assets/6-step-framework-diagram.png)
 
@@ -21,7 +21,7 @@ Here we outline the 6 steps first.
 
 > \[Warm-up example 1\] Image you are a **2nd grader**. You just learned how to do multiplication. Now you are given this problem `5 + 4 * 3 ^ 2 = ?`. How would you solve it?
 
-> \[Warm-up example 2\] The 2nd example we will use is [Scenario A](1_overview.md#scenario-a-implement-a-relatively-simple-and-standalone-piece-of-code) which we already introduced in Chapter 1. Feel free to revisit Chapter 1 to refresh your memory. Imagine you are a junior developer. You have the basic programming skills. You are assigned a task to implement a relatively simple and standalone function. Inputs will be the balances of gift, debit, and credit, as well as the campaign cost. You are to output the new balances after deducting the cost.
+> \[Warm-up example 2\] The 2nd example we will use is [Scenario A](1_overview.md#scenario-a-implement-a-relatively-simple-and-standalone-piece-of-code) which we already introduced in Chapter 1. Feel free to revisit Chapter 1 to refresh your memory. Imagine you are a **junior developer**. You have the basic programming skills. You are assigned a task to implement a relatively simple and standalone function. Inputs will be the balances of gift, debit, and credit, as well as the campaign cost. You are to output the new balances after deducting the cost.
 
 Keep these examples in mind while we learn the 6-step framework. Think about how you might apply each step. We will also do a recap at the end of this chapter to see the framework in action using these 2 examples.
 
@@ -47,7 +47,7 @@ end
 
 > \[Quote\] In the book *Bulletproof Problem Solving* it says: "Good problem definition or framing can have a huge positive impact."
 
-The first step is to identify the problem. Remember the first principle we laid out in the previous chapter? Problem-oriented mindset! And part of that mindset is to form the habit of always identifying the problem first. Depending on the problem, your experience, and the context, this step may be simple, but it may also be super complicated. The objective of this step is to have a clear understanding of our best efforts. What exactly is the problem? Who are we solving it for? What value will a solution deliver? Is there a cause or deeper problem behind it? As indicated in the conditional clause, if there's a problem behind the problem at hand, we may want to consider pivot and solve that problem as the root problem instead. Please also note that there might be yet another problem behind that root problem. Hence a recursive & iterative process. This connects to our second principle, hierarchical thinking.
+The first step is to identify the problem. Remember the first principle we laid out in the previous chapter? **Problem-oriented mindset**! And part of that mindset is to form the habit of always identifying the problem first. Depending on the problem, your experience, and the context, this step may be simple, but it may also be super complicated. The objective of this step is to have a clear understanding of our best efforts. What exactly is the problem? Who are we solving it for? What value will a solution deliver? Is there a cause or deeper problem behind it? As indicated in the conditional clause, if there's a problem behind the problem at hand, we may want to consider pivot and solve that problem as the root problem instead. Please also note that there might be yet another problem behind that root problem. Hence a recursive & iterative process. This connects to our second principle, hierarchical thinking.
 
 > \[Example\] The immediate issue you see: Laundry is piling up because the washer takes a long to wash 1 load. The immediate solution might be resetting the washer, checking the cycle, and trying a new cycle. With further investigation, you might discover that the washer is taking a lot of time to complete a cycle because there's a drainage issue. The water is draining very slowly. This may require you to check the drain hose for clogs. Maybe need to clean it or remove any objects blocking the flow. If we dig a little bit more, we may find the root cause of this problem. The drain hose is clogged because of poor maintenance habits. And the solution is to clean the drain hose regularly.
 
@@ -71,7 +71,7 @@ end
 
 > \[Quote\] In the book *Bulletproof Problem Solving* it says: "Disaggregation gives us manageable chunks to work on and to see the structure of the problem."
 
-Part of decomposing a problem is actually to decide if I need to decompose it as indicated by the `problem.manageable?` condition.
+Part of decomposing a problem is actually to decide if I need to decompose it as indicated by the `problem.manageable?` condition. That is also the exact reason why we need to decompose problems into smaller pieces. Human beings are just not good at process complicated things. When we are overwhelmed, our judgement can be clouded.
 
 > \[Example\] I'd assume all the readers would be able to immediately solve this problem. `1 + 2 + 3 + 4 = ?`. The solution is pretty obvious which is 10. However, imaging for a 1st grade kid, this problem can be overwhelming for them. So it will be necessary to decompose it into 3 problems. First, `1 + 2 = ?`. The solution is 3. Then `3 + 3 = 6`. And lastly `6 + 4 = 10`.
 
@@ -87,7 +87,7 @@ sorted_subproblems = self.prioritize(subproblems)
 
 > \[Quote\] In the book *Bulletproof Problem Solving* it says: "Focus your early efforts on the big levers that you can pull." (This quote is more in the context of business. We will see later how the idea can be translated to the technical context.)
 
-Human beings are not designed for multitasking like the modern-day multi-core CPUs do. Likewise, teams are always going to lack resources. On top of that, some subproblems may have dependencies. In the previous example, a kid must solve `1 + 2` before he/she can tell that the next problem is to solve `3 + 3`. Therefore it's almost impossible to be able to tackle all subproblems at once. Then the question would be, which subproblem shall I solve first? We've noted that problem-solving is essentially a tree traversal problem itself. Then what's the best strategy to traverse, grow, and prune this tree as we identify the problem & its root, decompose it into subproblems, and explore solutions?
+Human beings are not designed for multitasking like the modern-day multi-core CPUs do. Likewise, teams are always going to lack resources. On top of that, some subproblems may have dependencies. In the previous example, a kid must solve `1 + 2` before he/she can tell that the next problem is to solve `3 + 3`. Therefore it's almost impossible to be able to tackle all subproblems at once. Then the question would be, **which subproblem shall I solve first?** We've noted that problem-solving is essentially a tree traversal problem itself. Then what's the best strategy to traverse, grow, and prune this tree as we identify the problem & its root, decompose it into subproblems, and explore solutions? The answer is what we all love to hate. **It depends.** We need to examine **the relationship and the strucutre** of these nodes to determine our strategy.
 
 > \[Example\] Pretend that a kid first decomposed the `1 + 2 + 3 + 4 = ?` into 3 possible subproblems `1 + 2`, `2 + 3`, and `3 + 4`. (Assume the kid has not learned the commutative law of addition hence not realizing that `1 + 4` is also a valid subproblem.) It should be obvious that we should prioritize solving `1 + 2` and `3 + 4` in this case because if we can manage to solve these two, the subproblem `2 + 3` will become irrelevant. Therefore, we should not waste time upfront solving this subproblem.
 
@@ -105,7 +105,7 @@ end
 
 Once we break down a problem into a comfortable level of granularity, we may then proceed with building the solution. Now, building a solution can involve all sorts of different things. Building a website requires utilizing tools that would be very different from building a web crawler. We won't discuss how we specifically use tools and build stuff as it's out of the scope of this workshop. In fact, that's something that has been already extensively covered by other open or paid courses and tech bootcamps. Our goal in this workshop is to identify several patterns as well as anti-patterns in this step, especially in this recursive & iterative context. For example, while we piece together this small puzzle, make sure that this solution later will contribute to the bigger puzzle without losing the big picture.
 
-> \[Highlight\] Usually if we have a good grasp of the problem and the building blocks, the solution would be straightforward. And it would be just a matter of time to complete it. In the other case, we still have to live with our best-effort assumptions of the problem and start building something even if that's a wrong solution. Only by producing a solution, we can then go to our next step to test. Only by testing a solution, we can find gaps in our understanding of the problem and the building blocks.
+> \[Highlight\] Usually if we have a good grasp of the problem and the building blocks, the solution would be straightforward. And it would be just a matter of time to complete it. In the other case, we still have to live with our best-effort assumptions of the problem and start building something even if that's a wrong solution. **Only by producing a solution, we can then go to our next step to test.** Only by testing a solution, we can find gaps in our understanding of the problem and the building blocks.
 
 > \[Example\] Write a program to print some text on the terminal. That's an example of a straightforward problem. As long as you know how to use the built-in I/O library in the specified programming language.
 
@@ -119,7 +119,7 @@ self.test_and_analyze(solution, problem)
 
 After a solution is built whether for a subproblem or a root problem, we must assess how well it solved the problem. Not solved at all? Solved partially? Completely solved? Then try to make sense of it. Is there some gap? A gap in our understanding of the problem? A gap in the way we decomposed the problem? A gap in the solution? Based on that, we then decide whether we should iterate and how. Analyze the results and the remaining gaps. Improve our understanding of the problem and the solution. In Chapter 7, we will explore the common pitfalls and tips related to this step. A quick note. When we talk about testing, plz do not immediately connect it with writing automated tests in the context of programming. It's just one form of assessing the outcome. You may not even realize that might have been doing this already. On the other side, you may not realize that you might not be doing it frequently enough.
 
-> \[Highlight\] Testing and analysis is a crucial step in our iterative process. This is one of the few ways we can verify or correct our hypotheses and assumptions. Only by doing so, did we start off slightly better in the next iteration than where we were.
+> \[Highlight\] **Testing and analysis is a crucial step in our iterative process. This is one of the few ways we can verify or correct our hypotheses and assumptions. Only by doing so, did we start off slightly better in the next iteration than where we were.**
 
 > \[Example\] Imagine you're baking cookies and following a recipe that says to bake them for 10 minutes at 350 degrees Fahrenheit. You take them out after 10 minutes, but the cookies are still soft and doughy. In this case, you probably had a limited understanding of baking, that's why you needed that recipe. Given the result, there are a couple of things you can guess or do. Put the cookies back for a few more minutes and see if it does the job. Maybe you want to review your process. Maybe the dough wasn't done right. Maybe the oven is malfunctioning. Maybe you forgot to preheat it. Maybe the recipe is off. By doing so, you now have a better understanding of the problem and come up with more hypotheses to test, which will in turn get you closer and closer to the real problem and the real solution.
 
@@ -246,7 +246,7 @@ Let's skip other iterations and possible recursions. We've built the solution. A
 
 We've tried to apply the framework to these 2 examples and see it in action. That wraps up this chapter.
 
-## Homework
+## 2.7 Homework
 
 \[Homework 2.1\] We've skipped a bunch of steps in the example above in the case of Scenario A. Try solving that problem yourself with any programming language of your choice. Observe the activities involved as you solve them. Write down these steps or draw the tree structure; see how it fits into this framework and the interactive + recursive process.
 
