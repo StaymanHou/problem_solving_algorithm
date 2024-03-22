@@ -130,7 +130,9 @@ These 2 topics are covered more in details in other workshops, but we shall stil
 
 Now that we've introduced the 6-step framework, we can combine it with the iterative & recursive principle that we've learned in the previous chapter.
 
-TODO insert animated svg here of a tree traversal
+![Animated problem tree example](assets/animated-problem-tree.gif)
+
+You can find all the frames of the animated gif in [this folder](raw/animated-problem-tree-example-gif/). This way to can read through each frame if you want.
 
 What's happening here is essentially following the 6 steps for each node as we grow, prune, revise, traverse, and retract through the tree. It may seem chaotic but if you look at it carefully you can see order. Unfortunately I cannot provide you with an SOP that you can simply follow alone each step and get any problem solved, because in its very nature problem-solving is an art of balancing various activities including discovery, learning, brainstorming, research, hypothesising. validating, building, testing, and more. We may skip or simplify certain steps or activities for certain problems, while invest a ton of effort in the same steps or activities for other problems.
 
