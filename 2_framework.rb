@@ -1,7 +1,7 @@
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while problem.still_relevant?
-      begin # = try in other programming languages
+      begin # = "try" in other programming languages
         root_problem = self.identify(problem)
         if problem != root_problem
           is_root_problem = false
@@ -19,7 +19,7 @@ module ProblemSolver
         end
         self.test_and_analyze(solution, problem)
         return solution
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = catch in other programming languages
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = "catch" in other programming languages
         if is_root_problem
           next
         else

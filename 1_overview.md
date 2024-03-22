@@ -50,9 +50,9 @@ Here we are also assuming that the given problem is the root problem by passing 
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while some_condition
-      begin # = try in other programming languages
+      begin # = "try" in other programming languages
         # ...
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = catch in other programming languages
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = "catch" in other programming languages
         next
       end
     end
@@ -94,7 +94,7 @@ This corresponds to our 3rd fundamental principle. **Exit Condition**. (I know t
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while problem.still_relevant?
-      begin # = try in other programming languages
+      begin # = "try" in other programming languages
         if problem.manageable?
           solution = self.build_solution(problem)
         else
@@ -105,7 +105,7 @@ module ProblemSolver
           end
         end
         return solution
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = catch in other programming languages
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = "catch" in other programming languages
         if is_root_problem
           next
         else

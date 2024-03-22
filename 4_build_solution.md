@@ -4,6 +4,8 @@
 
 # Simplify and prototype
 
+# Fake it before make it
+
 # When and how to borrow code?
 
 Make sure you understand the code

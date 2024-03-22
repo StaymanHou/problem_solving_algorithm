@@ -14,4 +14,6 @@ TDD mindset without actually doing TDD
 
 # happy_path_and_sad_path
 
+# Analyze = try to find the gap between the actual result vs our hypothesis. Then guess the possible causes.
+
 [< Previous Chapter](6_prioritize.md) | [Next Chapter >](8_retrospect_and_communicate.md)

@@ -50,9 +50,9 @@ solution_and_result = ProblemSolver.solve(Problem.new, is_root_problem: true)
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while some_condition
-      begin # = 其他语言的try
+      begin # = 其他语言的"try"
         # ...
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = 其他语言的catch
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = 其他语言的"catch"
         next
       end
     end
@@ -94,7 +94,7 @@ end
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while problem.still_relevant?
-      begin # = 其他语言的try
+      begin # = 其他语言的"try"
         if problem.manageable?
           solution = self.build_solution(problem)
         else
@@ -105,7 +105,7 @@ module ProblemSolver
           end
         end
         return solution
-      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = 其他语言的catch
+      rescue UnderstandingOfProblemHypothesesOrSolutionUpdated > exception # = 其他语言的"catch"
         if is_root_problem
           next
         else

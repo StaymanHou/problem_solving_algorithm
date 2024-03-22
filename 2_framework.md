@@ -15,15 +15,27 @@ Here we outline the 6 steps first.
 - Test & Analyze
 - Retrospect & Commuinicate
 
-TODO insert image here
+![6-Step Framework Diagram](assets/6-step-framework-diagram.png)
 
-## 2.2 Pseudo Code - The Main Workflow of Problem-Solving
+## 2.2 Warm Up
+
+> \[Warm-up example 1\] Image you are a **2nd grader**. You just learned how to do multiplication. Now you are given this problem `5 + 4 * 3 ^ 2 = ?`. How would you solve it?
+
+> \[Warm-up example 2\] The 2nd example we will use is [Scenario A](1_overview.md#scenario-a-implement-a-relatively-simple-and-standalone-piece-of-code) which we already introduced in Chapter 1. Feel free to revisit Chapter 1 to refresh your memory. Image you are a junior developer. You have the basic programming skills. You are assigned a task to implement a relatively simple and standalone function. Inputs will be the balances of gift, debit, and credit, as well as the campaign cost. You are to output the new balances after deducting the cost.
+
+Keep these examples in mind while we learn the 6-step framework. Think about how you might apply each step. We will also do a recap at the end of this chapter to see the framework in action using these 2 examples.
+
+## 2.3 Pseudo Code - The Main Workflow of Problem-Solving
 
 Let's again review the pseudo code which has evolved since last chapter. As we do so piece by piece, we will briefly explain what each step is about before we dive deeper in the up-coming chapters.
 
-TODO embed code here
+https://github.com/StaymanHou/problem_solving_algorithm/blob/a21cb2c2eca3a4eaac65bcdc2b5140a7969958d0/2_framework.rb#L1-L52
 
-## 2.3 Identify Problem
+## 2.4 The 6 Steps
+
+Let's take the pseudo code apart and walk through the steps.
+
+### 2.4.1 Identify Problem
 
 ```ruby
 root_problem = self.identify(problem)
@@ -39,7 +51,7 @@ The first step is to identify the problem. Remember the first principle we laid 
 
 This is just one aspect of problem identification. We are just using this example to showcase how a different udnerstanding of a problem can easily lead to different solutions, and sometimes ridiculous ones, actually more common than you might think. We will learn more in Chapter 3.
 
-# Decompose
+### 2.4.2 Decompose
 
 Okay, now that we are clear about the problem and have made sure that we are not trying to solving the wrong problem. The next step is to decompose the problem.
 
@@ -61,7 +73,7 @@ Part of the decomposing a problem is actually to decide if I need to decompose i
 
 Depending on the problem, your experience, and the context, the decomposition of the problem and its structure can be as simple as a single node, or a very complex tree. With a simple problem, we can just solve it without having to decompose it. Whereas for a more sophisticated problem, we will need to divide and conquer. We will learn more about when and how to decompose a problem in Chapter 5. And we shall see several common patterns.
 
-# Prioritize
+### 2.4.3 Prioritize
 
 The immediate thing that needs to happen after a problem is decomposed is to prioritize the subproblems
 
@@ -75,7 +87,7 @@ Human beings are not design for multi-tasking like the modern-day multi-core CPU
 
 This is probably not a good example, but in solving real-world problems, the prioritization can be much more ambiguous. Depending on the nature of the problem, the relationship between the subproblems, and together with the unknowns, prioritizing these can be hard. We will discuss some common strategies in Chapter 6.
 
-# Build Solution
+### 2.4.4 Build Solution
 
 ```ruby
 if problem.manageable?
@@ -87,7 +99,7 @@ end
 
 Once we broke down a problem into a comfortable level of granularity, we may then proceed with building the solution. Now, building a solution can involve all sorts of different things. Building a website requires utilizing tools that would be very different from building a web crawler. We won't discuss about how we specifically use tools and build stuff as it's out of the scope of this workshop. In fact, that's something has been already extensively covered by other open or paid courses and tech bootcamps. Our goal in this workshop is to identify several patterns as well as anti-patterns in this step, especialy in this recursive & iterative context. For example, while we piece together this small puzzle, making sure that this solution later will contribute to the bigger puzzle without lossing the big picture.
 
-# Test and Analyze
+### 2.4.5 Test and Analyze
 
 ```ruby
 self.test_and_analyze(solution, problem)
@@ -95,7 +107,9 @@ self.test_and_analyze(solution, problem)
 
 After a solution is built whether for a subproblem or a root problem, we must assess how well it solved the problem. Based on that, we then decide whether we should iterate and how. Analyze the results and the remaining gaps. Improve our understanding of the problem and the solution. In Chapter 7, we will explore the common pitfalls and tips related to this step. A quick note. When we talk about test, plz do not immediately connect it with writing automated tests in the context of programming. It's just one form of assessing the outcome. You may not even realize that might have been doing this already. On the other side, you may not realized that you might not be doing it frequently enough.
 
-# Retrospect and communicate
+TODO expand this a bit.
+
+### 2.4.6 Retrospect and Communicate
 
 ```ruby
 lesson_learned = retrospect(problem, solution_and_result)
@@ -108,9 +122,11 @@ That brings us to two common mistakes at engineers often make during their early
 
 The second misconception is believing that communicating the solution and result is an optional thing for engineers. A lot of good engineers tend to value the actual result a lot, which is good, but neglect the need to communicate the result. Many of us are pragmatic, practical, and focus on delivering the actual outcome. (Compared to those who just fake the results, or just do the fancy talks). The other side of the fact, though, is that value is only fully fullfilled when the other party receives it, whether that's a user, a client, a stakeholder, or a supervisor. That misconception combined with introversion (research examining the introversion of software engineers consistently reveals a higher percentage) and part of Christian belief (that God see our deeds and ultimately he decides our value), easily lead engineers not to put enough emphasis and enough to communicate their works. Therefore, I want to specifically highlight this step, not to get approval or praise by man, not to take shortcuts, but to deliver the value to its full potential.
 
+TODO add more examples to the each step
+
 These 2 topics are covered more in details in other workshops, but we shall still touch on these in Chapter 8.
 
-## Conclude
+## 2.5 Put it Together
 
 Now that we've introduced the 6-step framework, we can combine it with the iterative & recursive principle that we've learned in the previous chapter.
 
@@ -118,13 +134,13 @@ TODO insert animated svg here of a tree traversal
 
 What's happening here is essentially following the 6 steps for each node as we grow, prune, revise, traverse, and retract through the tree. It may seem chaotic but if you look at it carefully you can see order. Unfortunately I cannot provide you with an SOP that you can simply follow alone each step and get any problem solved, because in its very nature problem-solving is an art of balancing various activities including discovery, learning, brainstorming, research, hypothesising. validating, building, testing, and more. We may skip or simplify certain steps or activities for certain problems, while invest a ton of effort in the same steps or activities for other problems.
 
-## See it in action / examples
+## 2.6 See it in Action (Warm-up Examples)
 
-Let's see how this framework works with examples before we wrap up the chapter.
+Let's see how this framework works with the 2 warm-up examples before we wrap up the chapter.
 
-### Simple Math Problem
+### 2.6.1 Simple Math Problem
 
-Again, imaging now you are a 2nd grader. You just learned how to do multiplication. Now you are given this problem `5 + 4 * 3 ^ 2 = ?`.
+Again, imaging now you are a **2nd grader**. You just learned how to do multiplication. Now you are given this problem `5 + 4 * 3 ^ 2 = ?`.
 
 **Step 1.1 - Identify Problem (5 + 4 * 3 ^ 2 = ?)** In this context, we can assume the problem itself is the root problem. We have some idea about how the output will look like, most likely a number. We can partially understand the problem and its building blocks. We know the number `5`, `4`, `3`, and `2`. We are familar with the `+` operator. We just learned the `*` operator. However, we aren't quite sure about this `^` thing. At the moment your teach isn't around, so you can't ask about it. However we can still make an informed guess that it's something similar to `+` and `*`. It probably takes the two numbers on both sides and does something to produce another number. The other important building block we kinda know is the way we should decompose the problem. We basically need to take 2 numbers with 1 operator at a time, replace them with the result, calculate the next pair in the recursive manner.
 
@@ -168,9 +184,9 @@ Time to **iterate** again. Note again the hypothesis → verify → learn → pi
 
 (Note that we skipped prioritization for the entire problem. We also skipped analysis and communication.)
 
-### Scenario A
+### 2.6.2 Scenario A - Implement a Relatively Simple and Standalone Function
 
-Take a look at Scenario A in Chapter 1. Since we just went throught the first math example, I'll skip the parts that are very similar and leave it as your homework.
+Take another look at Scenario A in Chapter 1 and imagine you are a **junior developer** who has learned the basics of programming and a programming language of choice. Since we just went throught the first math example, I'll skip the parts that are very similar and leave it as your homework.
 
 **Step 1.1 - Identify Problem** After being assigned the task, we may first want to ask why each user has 3 balances instead of 1. That will help us to understand the background of the task. Understanding the unique use cases of each type of balances can give us some context. Next thing would be to think through the inputs and outputs. In terms of the format, we may want to confirm if all the numbers would be in USD and presented as decimals, because if we need to involve other currencies, the problem will be different as we will need to consider exchange rates and stuff. Let's say we've confirmed that. Finally, since we now have a rough understanding of the problem and its background, it's time to consider building blocks. This task does not involve any 3rd-party libraries, it's a pretty standalone function. The only knowledge needed to build the solution is the usage of the programming language.
 
@@ -192,24 +208,28 @@ Take a look at Scenario A in Chapter 1. Since we just went throught the first ma
 | 9  | 0      | 1000    | 100    | 1000         | 1000          | 0    | 0     | 100    |       |
 | 10 | 0      | 1200    | 100    | 1000         | 1000          | 0    | 200   | 100    |       |
 
-**Step 1.2 (2nd Try) - Decompose** 
+**Step 1.2 (2nd Try) - Decompose** Now with the test cases, it introduced a new dimension into the decomposition. No matter how we would have broken downthe problem in the 1st try, we can now break it down into two major subproblems. a) How to implement it; And b) how to run the test cases. (Note that this is directly related to the test step later). And problem b) can be decomposed further into several options such as no testing, manual testing, or automated testing. We will discuss about the pros and cons of these different approachs in Chapter 7.
 
-**Step 1.3 (2nd Try) - Prioritize** 
+**Step 1.3 (2nd Try) - Prioritize** Given this new decomposition, therein lies the question. Let's say we decided to do automated testing. Remember that we are junior developers now? Automated testing may sound scary. That may lead to additional subproblems. We'll need to learn the unit test framework. if something goes wrong, how would we know whether it's the implementation code or the test code? So we need to prioritize. Do we write test code first? Maybe writing the implementation code first is a better idea? Because the subproblem to write test code is something that obviously has greater uncertainties, shall we do the easy task first and come back to this one? Maybe we shall take on the most difficult subproblem? Of course there are different strategies, and we will learn that in Chapter 6.
 
+**Step 1.4 (2nd Try) - Build Solution** We build our first version of the solution, both the test code and the implementation code. Time to give it a spin.
 
-**Step 1.4 (2nd Try) - Build Solution**
+**Step 1.5 (2nd Try) - Test & Analyze** We typed the command and run the unit tests. Oops, We see some failed tests. Now we need to analyze the output, exam our code, and try to make sense of it. In most cases, it means we have some false assumptions or hypotheses. Maybe we thought we got the right logic but actually not. Maybe we thought we know what a function does but actually it something else. Maybe we thought we wrote the code in the right syntax but there's a typo. Through this step, we discovered something new about our solution that we didn't see previously.
 
-**Step 1.5 (2nd Try) - Test & Analyze** esp. Analyze
+With this new insight, we are ready for another iteration. And that's essentailly the process of troubleshooting. Since in this case, the remaining problems probably lies in the solution, We don't need to restart this iteration from the beginning.
 
-**Step 1.6 (2nd Try) - Retrospect & Commuinicate** esp. Commuinicate
+**Step 1.4 (3rd Try) - Build Solution** Let's say by looking at the error message we've made an informed inferrence. For example, all test cases failed, and the error complains about some syntax thing. It's reasonable to guess that the issue is where in the implementation of the code. Not the test, not the logic, at least not yet.
 
+Let's skip other iterations and possible recursions. We've built the solution. All test cases passed. Voila!
 
+**Step 1.6 (N+1 Try) - Retrospect & Commuinicate** We retrospect and try to identify the lessons we've learned. And lastly we need to communicate the result. That may mean we need to give our manager a heads-up. (There are plenty of juniors who would neglect this small step especially in companies that don't have an established procedure yet). Maybe we need to document it espcially a brief description of the logic for our future self or other teammates. Maybe we create a demo replicating some of the test cases but in a visual way so that the user can really see it in action in their browser so that we can get their true feedback.
+
+We've tried to apply the framework to these 2 examples and seen it in action. That wraps up this chapter.
 
 ## Homework
 
-Scenario A
+\[Homework 2.1\] We've skipped a bunch of steps in the example above in the case of Scenario A. Try solving that problem yourself with any programming language of your choice. Observe the activities involved as you solve it. Write down these steps or draw the tree structure; And see how it fits into this framework and the interative + recursive process.
 
-Another recent task of yours.
-
+\[Homework 2.2\] Reflect on a recent task or project you worked on or have completed. Identify the activities and steps you took. Write these down or draw the tree structure; And see how it fits into this framework and the interative + recursive process.
 
 [< Previous Chapter](1_overview.md) | [Next Chapter >](3_identify_problem.md)
