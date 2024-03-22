@@ -45,6 +45,8 @@ if problem != root_problem
 end
 ```
 
+> \[Quote\] In the book *Bulletproof Problem Solving* it says: "Good problem definition or framing can have a huge positive impact."
+
 The first step is to identify the problem. Remember the first principle we laid out in the previous chapter? Problem-oriented mindset! And part of that mindset is to form the habit of always identifying the problem first. Depending on the problem, your experience, and the context, this step may be simple, it may also be super complicated. The objective of this step is to have a clear understanding to our best effort. What exactly is the problem? Who are we solving it for? What value will a solution deliver? Is there a cause or deeper problem behind it? As indicated in the conditional clause, if there's a problem behind the problem at hand, we may want to consider pivot and solve that problem instead as the root problem. Please also note that there might be yet another problem behind that root problem. Hence a recursive & iterative process. This connects to our second principle, hierachical thinking.
 
 > \[Example\] The immediate issue you see: Laundry is piling up because the washer takes long to wash 1 load. The immediate solution might be resetting the washer, checking the cycle, and trying a new cycle. With further investigation, you might discover that the washer is taking a lot of time completing a cycle because there's a drainage issue. The water is draining very slowly. This may require you to check the drain hose for clogs. Maybe need to clean it or remove any objects blocking the flow. If we dig a little bit more, we may find the root cause of this problem. The drain hose is clogged because of poor maintenance habits. And the solution is to clean the drain hose regularly.
@@ -67,6 +69,8 @@ else
 end
 ```
 
+> \[Quote\] In the book *Bulletproof Problem Solving* it says: "Disaggregation gives us manageable chunks to work on and to see the structure of the problem."
+
 Part of the decomposing a problem is actually to decide if I need to decompose it as indicated by the `problem.manageable?` condition.
 
 > \[Example\] I'd assume all the reader would be able to immediately solve this problem. `1 + 2 + 3 + 4 = ?`. The solution is pretty obvious which is 10. However, imaging for a 1st grade kid, this problem can be overwhelming for them. So it will be necessary to decompose it into 3 problems. First, `1 + 2 = ?`. The solution is 3. Then `3 + 3 = 6`. And lastly `6 + 4 = 10`.
@@ -80,6 +84,8 @@ The immediate thing that needs to happen after a problem is decomposed is to pri
 ```ruby
 sorted_subproblems = self.prioritize(subproblems)
 ```
+
+> \[Quote\] In the book *Bulletproof Problem Solving* it says: "Focus your early efforts on the big levers that you can pull." (This quote is more in the context of business. We will see later how the idea can be translated to the technical context.)
 
 Human beings are not design for multi-tasking like the modern-day multi-core CPUs do. Likewise, teams are always going to lack resources. On top of that, some subproblems may have dependencies. In the previous example, a kid must solve `1 + 2` before he/she can tell that the next problem is to solve `3 + 3`. Therefore it's almost impossible to be able to tackle all subproblems at once. Then the question would be, which subproblem shall I solve first? We've noted that problem-solving is essentially a tree traversal problem itself. Then what's the best strategy to travese, grow, and prune this tree as we identify the problem & its root, decompose it into subproblems, and explore solutions?
 
@@ -99,15 +105,23 @@ end
 
 Once we broke down a problem into a comfortable level of granularity, we may then proceed with building the solution. Now, building a solution can involve all sorts of different things. Building a website requires utilizing tools that would be very different from building a web crawler. We won't discuss about how we specifically use tools and build stuff as it's out of the scope of this workshop. In fact, that's something has been already extensively covered by other open or paid courses and tech bootcamps. Our goal in this workshop is to identify several patterns as well as anti-patterns in this step, especialy in this recursive & iterative context. For example, while we piece together this small puzzle, making sure that this solution later will contribute to the bigger puzzle without lossing the big picture.
 
+> \[Highlight\] Usually if we have a good grasp of the problem and the building blocks, the solution would be straight forward. And it would be just a matter of time to complete it. In the other case, we still have to live with our best-effort assumptions of the problem, and start building something even if that's a wrong solution. Because only by producing a solution, we can then go to our next step to test. And only by testing a solution, we can find gaps in our understanding of the problem and the building blocks.
+
+> \[Example\] Write a program to print some text on the terminal. That's an example of a staight forward problem. As long as you know how to use the built-in I/O library in the specified programming language.
+
+> \[Example\] Here's another example showcasing the other type. Problem: You are given a bag containing red and blue marbles. Without looking, you need to determine if the bag contains more red marbles than blue marbles. However, you are only allowed to draw three marbles from the bag. Develop a strategy to determine if there are more red marbles than blue marbles based on your limited draws. Assumptions: The bag contains at least three marbles. The bag contains red & blue marbles and ONLY red & blue marbles. No other colors. The marbles are well-mixed, and each draw is random. As you can see in this case, we will have to live with assumptions. We won't be able to refine our assumptions until we do something.
+
 ### 2.4.5 Test and Analyze
 
 ```ruby
 self.test_and_analyze(solution, problem)
 ```
 
-After a solution is built whether for a subproblem or a root problem, we must assess how well it solved the problem. Based on that, we then decide whether we should iterate and how. Analyze the results and the remaining gaps. Improve our understanding of the problem and the solution. In Chapter 7, we will explore the common pitfalls and tips related to this step. A quick note. When we talk about test, plz do not immediately connect it with writing automated tests in the context of programming. It's just one form of assessing the outcome. You may not even realize that might have been doing this already. On the other side, you may not realized that you might not be doing it frequently enough.
+After a solution is built whether for a subproblem or a root problem, we must assess how well it solved the problem. Not solved at all? Solved partially? Completedly solved? Then try to make sense of it. Is there some gap? Gap in our understanding of the problem? Gap in the way we decomposed the problem? Gap in the solution? Based on that, we then decide whether we should iterate and how. Analyze the results and the remaining gaps. Improve our understanding of the problem and the solution. In Chapter 7, we will explore the common pitfalls and tips related to this step. A quick note. When we talk about test, plz do not immediately connect it with writing automated tests in the context of programming. It's just one form of assessing the outcome. You may not even realize that might have been doing this already. On the other side, you may not realized that you might not be doing it frequently enough.
 
-TODO expand this a bit.
+> \[Highlight\] Testing and analysis is a crucial step in our iterative process. This is one of the few ways we can verify or correct our hypotheses and assumptions. And only by doing so we start off slightly better in the next iteration than where we were.
+
+> \[Example\] Imagine you're baking cookies and following a recipe that says to bake them for 10 minutes at 350 degrees Fahrenheit. You take them out after 10 minutes, but the cookies are still soft and doughy. In this case, you probably had limited understanding of baking, that's why you needed that recipe. Given the result there are couple of things you can guess or do. Put the cookies back for a few more minutes and see if it does the job. Maybe you want to review your process. Maybe the dough wasn't done right. Maybe the oven is malfunctioning. Maybe you forgot to prehead it. Maybe the recipe is off. By doing so, you know have a better understanding of the problem and came up with more hypotheses to test, which will in turn get you closer and closer to the real problem and the real solution.
 
 ### 2.4.6 Retrospect and Communicate
 
@@ -122,7 +136,11 @@ That brings us to two common mistakes at engineers often make during their early
 
 The second misconception is believing that communicating the solution and result is an optional thing for engineers. A lot of good engineers tend to value the actual result a lot, which is good, but neglect the need to communicate the result. Many of us are pragmatic, practical, and focus on delivering the actual outcome. (Compared to those who just fake the results, or just do the fancy talks). The other side of the fact, though, is that value is only fully fullfilled when the other party receives it, whether that's a user, a client, a stakeholder, or a supervisor. That misconception combined with introversion (research examining the introversion of software engineers consistently reveals a higher percentage) and part of Christian belief (that God see our deeds and ultimately he decides our value), easily lead engineers not to put enough emphasis and enough to communicate their works. Therefore, I want to specifically highlight this step, not to get approval or praise by man, not to take shortcuts, but to deliver the value to its full potential.
 
-TODO add more examples to the each step
+> \[Quote\] "Failure is not the mother of success. High quality retrospect / review is." by Yitang.
+
+> \[Example\] Ultimately, human beings have limited energe and attention. For example, your boss may be managing 10 people. He assigned you a task. Do expect that he will always remember it. You may think that hay, he's my boos, he's the one requested this change. I've done it. He should have noticed it, right? Wrong! Not always. Then doesn't it mean he doesn't care? Wrong! Not necessarily. Yeah. it may not be that top priority thing. But...
+
+> \[Quote\] "If your supervisor doesn’t know that you did something, you, technically, didn’t do it." by Yitang.
 
 These 2 topics are covered more in details in other workshops, but we shall still touch on these in Chapter 8.
 

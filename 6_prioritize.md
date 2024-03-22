@@ -2,6 +2,8 @@
 
 show several examples and see the expected outcome by applying different strategies.
 
+e.g. chop down a tree
+
 # create_dummy_outputs_and_get_feedback_to_align_expectations
 
 # estimate_impact
@@ -23,5 +25,6 @@ show several examples and see the expected outcome by applying different strateg
 ## observation
 
 ## resolution
+
 
 [< Previous Chapter](5_decompose.md) | [Next Chapter >](7_test_and_analyze.md)

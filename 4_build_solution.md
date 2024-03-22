@@ -20,4 +20,6 @@ test often, break fast
 
 # temporary solution vs best practice
 
+"Perfection is not attainable, but if we chase perfection, we can catch excellence." - Vince Lombardi
+
 [< Previous Chapter](3_identify_problem.md) | [Next Chapter >](5_decompose.md)
