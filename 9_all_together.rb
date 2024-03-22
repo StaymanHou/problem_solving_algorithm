@@ -1,3 +1,5 @@
+# TODO put all back together again after finalizing other chapters
+
 module ProblemSolver
   def solve(problem, is_root_problem: false)
     while problem.unsolved? || problem.still_relevant?
