@@ -215,6 +215,12 @@ Now that we've learned the lessons from Einstein's quote, let's take a look at t
 
 As much as we need to make the effort to understand the problem and center our problem-solving approach around it, our perception of the problem can always be biased. We learn more about the problem as we try to solve it and sometimes even by putting together a wrong solution. Therefore, problem-solving is an iterative process. Until our solution is proven, we always live with assumptions. Assumptions of the problem. Assumptions of the breakdown. Assumptions of the solution and its components. This iterative process brings us closer and closer to the real problem and the real solution as we validate or correct our assumptions. We should not just get fascinated by the high-level and abstract stuff to the point where we become impractical or idealistic. Problem-solving = hypothesis → verify → learn → pivot. The faster you can iterate, the faster you can solve the problem.
 
+This pattern also means that it's usually a good idea to try before we commit, especially in areas that we are not familiar with. If possible, turn each problem-solving step into smaller iterative cycles.
+
+> \[Highlight\] "Don't bite off more than you can chew."
+
+Sometimes problem-solvers can commit too early and invest too much effort and resource in an activity or option, only to realize later that there's a better option but they didn't try.
+
 ### \[Pattern 1.4.2\] Recursion / Decomposition and Synthesis
 
 Looking at another dimension, problem-solving is also a recursive process. We decompose a bigger problem into pieces. Then into smaller pieces. Then into even smaller pieces. Until it's something actionable to us. At the same time, we need to know how to trace back. Knowing how this small detail fits into the bigger picture. Knowing which level of granularity to retract to when our understanding has iterated. And when we arrive at the solutions for each smaller component, we will eventually also need to piece everything together backup.

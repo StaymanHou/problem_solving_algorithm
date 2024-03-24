@@ -18,11 +18,13 @@
 
 ### Learn
 
-### Try
+Learn what? To what extend? Bloom's tax (iterative)
+
+### Try (iterative)
 
 ## I don't know that I don't know
 
-### Research
+### Research (iterative)
 
 ### Training
 

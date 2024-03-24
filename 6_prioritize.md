@@ -18,6 +18,10 @@ e.g. chop down a tree
 
 # balance
 
+# 2:5:3 (iterative)
+
+Do I have to solve this?
+
 # agile
 
 ## situation

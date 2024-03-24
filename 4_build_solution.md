@@ -2,7 +2,7 @@
 
 # Generalize TODO
 
-# Simplify and prototype
+# Simplify and prototype (iterative)
 
 # Fake it before make it
 
