@@ -101,8 +101,6 @@ Human beings are not designed for multitasking like the modern-day multi-core CP
 
 This is probably not a good example, but in solving real-world problems, prioritization can be much more ambiguous. Depending on the nature of the problem, the relationship between the subproblems, and together with the unknowns, prioritizing these can be hard. We will discuss some common strategies in Chapter 6.
 
-
-
 ### 2.4.4 Build Solution
 
 ```ruby
