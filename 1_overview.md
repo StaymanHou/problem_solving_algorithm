@@ -28,6 +28,8 @@ Now imagine yourself in these four scenarios, each presenting its own unique cha
 
 > As a senior engineer/team lead, you are told that the business wants to step into the social media sector. The rough idea is to create an online platform in the form of a web app + a mobile app (think about Facebook, Twitter, Reddit) that targets a specific user segment. Now you need to turn that idea into a product.
 
+On top of these scenarios, you may also want to think of some problems you solved recently or currently solving. The point here is to help you relate.
+
 ## 1.2 Pseudo Code - The Model of Problem-Solving
 
 With the scenarios laid out, now let's take a look at the pseudo code which represents the algorithm of the problem-solving approach.
@@ -60,7 +62,9 @@ module ProblemSolver
 end
 ````
 
-The outermost part of the `.solve` method is a while loop which represents the iterative nature of problem-solving. As we attempt to solve the problem, our understanding of the problem or the solution will change, which may call us to go another round, and so forth and so on...
+The outermost part of the `.solve` method is a while loop which represents the **iterative** nature of problem-solving.
+
+The `rescue` (`catch`) clause and the `next` keyword here indicate the fact that as we attempt to solve the problem, our understanding of the problem or the solution will change, which may tell us to go another round, and so forth and so on...
 
 ```ruby
 module ProblemSolver
@@ -82,7 +86,7 @@ class Problem
 end
 ````
 
-Until a solution is accepted; Or some other condition has been met.
+Is it an infinite loop then? Of course not. We iterate until a solution is accepted and returned; Or some other condition has been met.
 
 `return solution` will end the loop, representing the case where the problem has been solved.
 
@@ -133,7 +137,7 @@ end
 
 The exception here represents the fact that there are cases we would need to exit the recursion and revisit the root or parent problem as we solve the subproblems. Sometimes by learning more about the problem as we solve it or part of it, we will need to adjust the way we break things down, or even overhaul the entire plan.
 
-This recursive nature combined with the iterative nature mentioned above, I call the 2nd principle of problem-solving. **Hierarchical Thinking**
+This **recursive** nature combined with the **iterative** nature mentioned above, I call the 2nd principle of problem-solving. **Hierarchical Thinking**
 
 As we've walked through the pseudo code and pointed out the 3 principles, let's now dive deeper one by one.
 
@@ -213,11 +217,11 @@ Now that we've learned the lessons from Einstein's quote, let's take a look at t
 
 ### \[Pattern 1.4.1\] Hypothesis → Verify → Learn → Pivot
 
-As much as we need to make the effort to understand the problem and center our problem-solving approach around it, our perception of the problem can always be biased. We learn more about the problem as we try to solve it and sometimes even by putting together a wrong solution. Therefore, problem-solving is an iterative process. Until our solution is proven, we always live with assumptions. Assumptions of the problem. Assumptions of the breakdown. Assumptions of the solution and its components. This iterative process brings us closer and closer to the real problem and the real solution as we validate or correct our assumptions. We should not just get fascinated by the high-level and abstract stuff to the point where we become impractical or idealistic. Problem-solving = hypothesis → verify → learn → pivot. The faster you can iterate, the faster you can solve the problem.
+As much as we need to make the effort to understand the problem and center our problem-solving approach around it, our perception of the problem can always be biased. We learn more about the problem as we try to solve it and sometimes even by putting together a wrong solution. Therefore, problem-solving is an **iterative** process. Until our solution is proven, we always live with assumptions. Assumptions of the problem. Assumptions of the breakdown. Assumptions of the solution and its components. **This iterative process brings us closer and closer to the real problem** and the real solution as we validate or correct our assumptions. We should not just get fascinated by the high-level and abstract stuff to the point where we become impractical or idealistic. Problem-solving = hypothesis → verify → learn → pivot. **The faster you can iterate, the faster you can solve the problem.**
 
-This pattern also means that it's usually a good idea to try before we commit, especially in areas that we are not familiar with. If possible, turn each problem-solving step into smaller iterative cycles.
+This pattern also means that it's usually a good idea to try before we commit, especially in areas that we are not familiar with. If possible, turn each problem-solving step into **smaller iterative cycles**.
 
-> \[Highlight\] "Don't bite off more than you can chew."
+> \[Highlight\] **"Don't bite off more than you can chew."**
 
 Sometimes problem-solvers can commit too early and invest too much effort and resource in an activity or option, only to realize later that there's a better option but they didn't try.
 
@@ -285,6 +289,8 @@ On the opposite side, there are several indicators as well that can signal use t
 Generally speaking, there can be multiple factors, external change, demand change, business change, and perception change of the problem solver.
 
 Also, remember the fact that problem-solving is recursive. So all these exit conditions can be applied to any subproblem at any granularity level.
+
+> \[Highlight\] One thing I want to emphasize, and I've noticed that a good number of engineers need to overcome, is that we need to be ready to **LET IT GO**. If all the signs are shouting to us that we should stop pursuing a solution, we should listen. Sometimes, engineers just can't live with the sense of incompleteness, when it no longer make enough sense to solve a problem or complete a solution.
 
 ## 1.6 Chapter Summary
 
