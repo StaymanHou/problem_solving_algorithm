@@ -12,6 +12,8 @@ Make sure you understand the code
 
 # one_at_a_time
 
+# start with working state (esp. when troubleshooting)
+
 # don't be afriad to break things
 
 test often, break fast
