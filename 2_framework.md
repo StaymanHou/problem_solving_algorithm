@@ -4,7 +4,7 @@
 
 ## 2.1 Intro
 
-We talked about the model and the principles of problem-solving. In this chapter, we will now introduce the 6-step problem-solving process. Keep in mind that problem-solving is an iterative & recursive process. So in the real world, you would be jumping between steps in quite arbitrary order except that it always starts with identifying the problem. You won't be simply executing these 6 steps in a linear fashion and can it a day. We shall look at an example after we walk through these steps.
+We talked about the model and the principles of problem-solving. In this chapter, we will now introduce the 6-step problem-solving process. Keep in mind that problem-solving is an iterative & recursive process. So in the real world, you would be jumping between steps in quite arbitrary order except that it always starts with identifying the problem. You won't be simply executing these 6 steps in a linear fashion and call it a day. We shall look at an example after we walk through these steps.
 
 Here we outline the 6 steps first.
 
@@ -158,7 +158,7 @@ Now that we've introduced the 6-step framework, we can combine it with the itera
 
 ![Animated problem tree example](assets/animated-problem-tree.gif)
 
-You can find all the frames of the animated gif in [this folder](raw/animated-problem-tree-example-gif/). This way to can read through each frame if you want.
+You can find all the frames of the animated gif in [this folder](raw/animated-problem-tree-example-gif/). This way you can read through each frame if you want.
 
 What's happening here is essentially following the 6 steps for each node as we grow, prune, revise, traverse, and retract through the tree. It may seem chaotic but if you look at it carefully you can see order. Unfortunately, I cannot provide you with an SOP that you can simply follow along each step and get any problem solved, because in its very nature problem-solving is an art of balancing various activities including discovery, learning, brainstorming, research, and hypothesizing. validating, building, testing, and more. We may skip or simplify certain steps or activities for certain problems while investing a ton of effort in the same steps or activities for other problems.
 
@@ -204,7 +204,7 @@ Time to **iterate** again. Note again the hypothesis → verify → learn → pi
 
 **Step 1.2 (3rd Try) - Decompose (5 + 4 * 3 ^ 2 = ?)** `3 ^ 2 = x`, `4 * x = y`, `5 + y = ?`
 
-**Step 1.3 (3rd Try) - Build Solution (5 + 4 * 3 ^ 2 = ?)** `3 ^ 2 = 6`, `4 * 6 = 24`, `5 + 24 = 29`
+**Step 1.3 (3rd Try) - Build Solution (5 + 4 * 3 ^ 2 = ?)** `3 ^ 2 = 9`, `4 * 9 = 36`, `5 + 36 = 41`
 
 **Step 1.4 (3rd Try) - Test (5 + 4 * 3 ^ 2 = ?)** We show our solution yet again to the teacher, and finally we got it right.
 
