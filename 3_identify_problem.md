@@ -2,17 +2,29 @@
 
 # Check Domain Knowledge
 
-## Do I understand the problem?
+## Do I understand the problem itself?
 
-## Do I understand the current situation?
+e.g. Need to have some idea about Double Entry Bookkeeping before talking about building a bookkeeping system.
+
+## Do I understand the current situation, context, background?
+
+e.g. Biz vs Tech. (Except for cutting-edge tech driven biz). Need to launch something quickly vs build it properly. e.g. AliCloud.
+
+Also refer to Yitang PM.
 
 ## Do I know the building blocks potentially required for a solution?
+
+Often time we can't properly define a problem without introducing a certain level of implication in the form of solutions. Think of this as finger pointing to the moon.
 
 # Acquire Domain Knowledge
 
 ## I know that I know
 
+easy peasy lemon squeezy
+
 ## I don't know that I know
+
+still somewhat ok until you need to teach someone else
 
 ## I know that I don't know
 
@@ -20,7 +32,11 @@
 
 Learn what? To what extend? Bloom's tax (iterative)
 
+It's okay that I just learn enough to solve the problem at hand (Ties with the recursive approach)
+
 ### Try (iterative)
+
+Verify that I've changed from I know I don't know to I know I know
 
 ## I don't know that I don't know
 
@@ -32,7 +48,9 @@ Learn what? To what extend? Bloom's tax (iterative)
 
 Give context and background, check the math example in Chapter 2
 
-### Study
+### Study (in adjacent fields)
+
+### Feedback / Open Mindedness
 
 ### Other factors
 
