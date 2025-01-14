@@ -46,6 +46,8 @@ Most dangerous
 
 ### Research & Benchmark
 
+e.g. Recommender system
+
 ### Ask
 
 Give context and background, check the math example in Chapter 2
