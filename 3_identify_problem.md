@@ -30,9 +30,11 @@ still somewhat ok until you need to teach someone else
 
 ### Learn
 
-Learn what? To what extend? Bloom's tax (iterative)
+Learn what? To what extend? Bloom's tax. 1/10/100 principles. (iterative)
 
 It's okay that I just learn enough to solve the problem at hand (Ties with the recursive approach)
+
+Pitfalls: not MECE. Missed a critical component. Missed a better option.
 
 ### Try (iterative)
 
@@ -40,13 +42,15 @@ Verify that I've changed from I know I don't know to I know I know
 
 ## I don't know that I don't know
 
-### Research (iterative)
+Most dangerous
 
-### Training
+### Research & Benchmark
 
 ### Ask
 
 Give context and background, check the math example in Chapter 2
+
+### Training
 
 ### Study (in adjacent fields)
 
@@ -66,17 +70,33 @@ No learn is going to be wasted. So don't be afraid of learning
 
 ## Something not working as expected
 
+Why? What are the possible causes? How to verify or rule out? Don't jump to fix too quickly.
+
+More in ch 5
+
 ## Develop something new
+
+Why? Can we not do it? (Lean) Can we solve another simpler problem?
 
 ## Other type
 
 ## When to stop?
 
+Usually one or two levels deeper can be enough.
+
+short term vs long term
+
 # Clarify Objectives
 
 ## Desired Input and Output
 
+lo-fi, hi-fi, prototype, etc
+
+ROI (1/10)
+
 ### solve it to what extend?
+
+2/5/3 principles
 
 ## not always need to solve the root problem
 
