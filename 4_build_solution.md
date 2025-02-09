@@ -4,6 +4,8 @@
 
 Pitfall: the temptation to kill two birds with one stone.
 
+Minimize the chance of multiple things going wrong at the same time.
+
 # Simplify and prototype (iterative)
 
 e.g. "How do I implement a binary search on a sorted list of 1,000 integers in Python, with logging for every step of the search process?"
