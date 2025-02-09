@@ -54,6 +54,8 @@ Make sure you understand the code. vs Make sure you understand how to use the co
 
 test often, break fast
 
+Build a comfortable dev environment
+
 # temporary solution vs best practice
 
 "Perfection is not attainable, but if we chase perfection, we can catch excellence." - Vince Lombardi
