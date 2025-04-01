@@ -565,27 +565,267 @@ When planning your tech stack for web or mobile applications, it's helpful to br
 - **DevOps Practices:**  
   Adopt infrastructure-as-code (e.g., Terraform), automated testing, and secure deployment practices to streamline operations and maintain system integrity.
 
-## 5.6 Troubleshooting System
+### 5.5.3 Team / Talents
 
-### 5.6.1 Access pattern changed
+People Are as Critical as Technology:
 
-### 5.6.2 Issue introduced into application code
+- **Skill Alignment:**
+Assess your team's expertise with the technologies under consideration. If the team is already familiar with a given stack, that might tip the scales in its favor.
 
-### 5.6.3 Infra issue
+- **Learning Curve:**
+Consider the ramp-up time for new technologies. For instance, adopting a cutting-edge framework may offer benefits but require training.
 
-### 5.6.4 3rd-party service issue
+- **Team Size & Structure:**
+For small teams, simplicity and maintainability are key. For larger teams, consider modularity and clear ownership of different parts of the stack.
 
-### 5.6.5 Middleware
+- **Hiring & Collaboration:**
+Evaluate whether you need to hire additional talent or upskill existing staff. Sometimes, choosing technologies with a larger talent pool can ease future hiring challenges.
+
+- **Real-World Consideration:**
+A tech stack that is perfect on paper might falter in practice if the team isn’t comfortable with it. Always balance technical merits with the human element. When the team understands and trusts the stack, the likelihood of long-term success increases.
+
+## 5.6 Troubleshooting Production Systems
+
+### 5.6.1 Typical Process
+
+#### 5.6.1.a Problem Identification & Alerting
+- **What Happens:** Monitoring tools (like Prometheus, Datadog, or New Relic) trigger alerts when key metrics deviate from normal. Customer complaints or error logs (e.g., failed checkouts) are also indicators.  
+- **Example:** An alert is raised because the checkout failure rate spikes above a threshold, and customer support logs multiple complaints about “payment errors.”
+
+#### 5.6.1.b Initial Assessment & Impact Analysis
+- **What Happens:** Quickly determine the scope—how many users are affected, what parts of the system are impacted, and potential business impact (revenue loss, user dissatisfaction).  
+- **Example:** The operations team assesses that 20% of transactions over the past hour failed, affecting users in a particular region.
+
+#### 5.6.1.c Immediate Containment & Mitigation
+- **What Happens:** Apply temporary fixes to reduce harm. This might involve rolling back a recent deployment, increasing server capacity, or enabling a failover mechanism.  
+- **Example:** The team decides to revert a recent update to the payment gateway integration that coincided with the spike in failures, temporarily restoring normal operations.
+
+#### 5.6.1.d Root Cause Investigation
+- **What Happens:** Conduct a systematic review of logs, metrics, and system changes to determine what triggered the issue.  
+- **Example:** Investigation reveals that a change in the payment gateway API introduced stricter validation rules that were not properly handled by the new code.
+
+#### 5.6.1.e Hypothesis Development & Testing
+- **What Happens:** Formulate possible explanations for the failure and design tests or queries to confirm or refute these hypotheses.  
+- **Example:** A hypothesis is formed that the new validation rules are causing certain transactions to be rejected. The team simulates transactions in a staging environment to see if the behavior is reproducible.
+
+#### 5.6.1.f Implementing the Fix
+- **What Happens:** Once the root cause is confirmed, implement a permanent solution. This might involve patching code, updating configurations, or negotiating changes with a third-party service.  
+- **Example:** Developers update the integration code to correctly handle the new API’s validation requirements, and the patch is deployed following proper review processes.
+
+#### 5.6.1.g Verification & Monitoring
+- **What Happens:** Validate that the fix resolves the issue without causing regressions. Enhanced monitoring ensures that similar problems do not recur.  
+- **Example:** Post-deployment, the team closely monitors the checkout process to ensure transaction success rates return to normal, and no new alerts are triggered.
+
+#### 5.6.1.h Documentation & Communication
+- **What Happens:** Document the incident, steps taken, and lessons learned. Communicate with stakeholders and update runbooks or playbooks for future reference.  
+- **Example:** A post-mortem report is prepared, detailing the root cause, the fix implemented, and recommendations to prevent similar issues in the future. The team holds a debrief meeting with customer support and engineering leads.
+
+![troubleshoot_prod_system_flowchart](assets/troubleshoot_prod_system_flowchart.svg)
+
+### 5.6.2 Typical Root Causes
+
+#### 5.6.2.a Access Pattern Changed
+
+- **Example:** A sudden promotional campaign leads to unexpected user behavior, overwhelming certain endpoints with requests that weren’t designed for that load.
+
+- **Common Symptoms:**
+  - **Performance Degradation:** Noticeable slowdown or increased latency in certain endpoints.
+  - **Error Spikes:** More frequent 5xx errors, timeouts, or dropped requests.
+  - **Resource Overuse:** Sudden increases in CPU, memory, or network utilization.
+  - **Anomalous Traffic Patterns:** Unusual request volumes or query patterns not seen during normal operations.
+
+- **Potential for Misdiagnosis:**
+  - **Overload vs. Code Bug:** Increased latency and errors might be mistaken for inefficient algorithms or poorly optimized code when they’re actually due to unexpected traffic surges (e.g., a viral event or promotional campaign).
+  - **Security Concerns:** These symptoms could also trigger a false alarm for a DDoS attack, leading teams to focus on security defenses rather than scaling resources.
+  - **Infrastructure Misinterpretation:** High resource usage might be misinterpreted as an infrastructure misconfiguration when the true cause is the changed access pattern.
+
+#### 5.6.2.b Issue Introduced into Application Code
+
+- **Example:** A recent deployment inadvertently introduced a bug in the payment module that wasn’t caught during testing.
+
+- **Common Symptoms:**
+  - **Application Errors:** Frequent exceptions, crashes, or unhandled errors in the logs.
+  - **Incorrect Business Logic:** Unexpected outputs or behavior, such as calculation errors or failed transactions.
+  - **Regression in Functionality:** Features that previously worked suddenly malfunction.
+  - **Degraded User Experience:** Users encountering broken workflows or inconsistent states.
+
+- **Potential for Misdiagnosis:**
+  - **Transient vs. Persistent:** Intermittent errors might be misinterpreted as flaky infrastructure or network issues rather than a new bug in the code.
+  - **Shared Symptoms with Middleware/Infra:** Similar error patterns (like timeouts or null pointer exceptions) can also emerge from misconfigured middleware or even hardware issues, leading to an initial misdirected investigation.
+  - **Legacy Code Impact:** Sometimes, a recent change might expose latent issues in legacy code, which could be wrongly attributed solely to the new code rather than an interaction between the two.
+
+#### 5.6.2.c Infra Issue
+
+- **Example:** A misconfigured load balancer or a failing server instance causes sporadic service interruptions.
+
+- **Common Symptoms:**
+  - **Unresponsive Services:** Slow or unresponsive servers, network timeouts, or connectivity drops.
+  - **Resource Saturation:** High load averages, disk I/O errors, or memory shortages on specific servers.
+  - **Deployment/Configuration Problems:** Issues with load balancers, DNS resolution errors, or misconfigured firewalls.
+  - **Unexpected Restarts/Crashes:** Server or container crashes without a clear application error.
+
+- **Potential for Misdiagnosis:**
+  - **Code vs. Hardware:** Similar symptoms like high latency or timeouts might be misattributed to inefficient code rather than underlying hardware failures or network misconfigurations.
+  - **Transient Network Glitches:** Temporary infra hiccups can mimic intermittent application errors, leading teams to focus on application-level fixes.
+  - **Scaling Misinterpretation:** A failure to scale (e.g., autoscaling not triggering) may look like a software bug if monitoring isn’t carefully correlated with infra performance metrics.
+
+#### 5.6.2.d 3rd-Party Service Issue
+
+- **Example:** An external payment gateway suffers downtime or changes its API, impacting your system’s ability to process payments.
+
+- **Common Symptoms:**
+  - **API Failures:** Repeated error responses (e.g., 400/500 status codes) or timeouts from external service calls.
+  - **Inconsistent Behavior:** Fluctuating performance or intermittent connectivity issues with external services.
+  - **Service Unavailability:** A complete or partial outage in a critical external dependency (e.g., payment gateway or data provider).
+  - **Dependency Latency:** Increased response times from external APIs affecting overall system performance.
+
+- **Potential for Misdiagnosis:**
+  - **Internal vs. External:** Symptoms might initially be blamed on internal service bugs, particularly if error handling is not robust, leading to attempts to fix code that’s actually behaving correctly.
+  - **Caching Effects:** Cached error responses or stale data from third-party APIs might hide the real-time status of the external service, causing misinterpretation of the issue’s source.
+  - **Infrastructure vs. Dependency:** Increased latency may be wrongly attributed to network or infrastructure issues when the actual slowdown is due to the third-party service itself.
+
+#### 5.6.2.e Middleware
+
+- **Example:** A caching layer (e.g., Redis) experiences performance degradation or misconfiguration, leading to stale data or timeouts.
+
+- **Common Symptoms:**
+  - **Stale or Inconsistent Data:** Cache misses or outdated information being served.
+  - **Session or State Errors:** Issues with session persistence, leading to user authentication or state management problems.
+  - **Communication Bottlenecks:** Middleware layers (e.g., message queues or API gateways) introducing delays or errors.
+  - **Unexpected Behavior in Data Flow:** Erratic routing of requests or errors in data transformations.
+
+- **Potential for Misdiagnosis:**
+  - **Application Code Overlap:** Middleware issues can present similar symptoms to bugs in the application logic (e.g., improper handling of cache invalidation), leading developers to inspect application code first.
+  - **Infra Confusion:** Performance degradation in middleware might be confused with broader infrastructure issues, especially if the middleware is tightly integrated with other system components.
+  - **Transient Issues:** Middleware problems might be intermittent, causing them to be misdiagnosed as race conditions or sporadic infra failures, rather than a persistent misconfiguration in the middleware layer.
+
+By clearly understanding both the symptoms and the potential pitfalls in diagnosing these issues, teams can avoid common missteps in troubleshooting. This detailed breakdown helps ensure that each root cause is investigated with the right context and that similar symptoms across different layers are carefully differentiated.
+
+| **Root Cause**                   | **Common Symptoms**                                                                                                                                                                         | **Potential for Misdiagnosis**                                                                                                                                                                   |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Access Pattern Changed**       | - Performance degradation (increased latency) <br> - Error spikes (5xx, timeouts) <br> - High resource usage (CPU, memory, network) <br> - Anomalous traffic patterns                   | - Mistaking traffic surges for inefficient code <br> - Confusing overload with a DDoS attack <br> - Interpreting high resource use as infra misconfiguration rather than changed usage    |
+| **Issue Introduced into Application Code** | - Frequent exceptions or crashes <br> - Incorrect business logic and unexpected outputs <br> - Regression of functionality <br> - Degraded user experience                         | - Attributing intermittent errors to network or infrastructure issues <br> - Overlooking latent legacy issues exposed by new changes <br> - Confusing with middleware or infra issues       |
+| **Infra Issue**                  | - Unresponsive services and connectivity drops <br> - High load averages, disk I/O, memory shortages <br> - Misconfigurations (load balancers, DNS, firewalls) <br> - Unexpected restarts | - Blaming inefficient code instead of hardware/network failures <br> - Misinterpreting transient network glitches as application bugs <br> - Scaling issues misread as code errors      |
+| **3rd-Party Service Issue**      | - Repeated API errors (400/500) or timeouts <br> - Inconsistent performance and intermittent connectivity <br> - Complete or partial external service outages <br> - Dependency latency | - Mistaking external API failures for internal service bugs <br> - Caching or stale data hiding the real-time status of the dependency <br> - Misattributing delays to network issues     |
+| **Middleware**                   | - Stale or inconsistent data <br> - Session or state management errors <br> - Communication bottlenecks (e.g., message queues, API gateways) <br> - Erratic request routing       | - Attributing issues to application logic rather than middleware faults <br> - Confusing middleware performance degradation with broader infra issues <br> - Misdiagnosing intermittent issues |
+
+### 5.6.3 The 3 Pillars Of Observability
+
+Observability lets you understand the internal state of a system through its external outputs. The three key pillars are **Logging**, **Metrics**, and **Tracing**. Each pillar has a unique role in troubleshooting production systems:
+
+#### 5.6.3.a Logging
+
+**Description:**  
+Logging involves capturing detailed, timestamped records of events within your system. Logs are ideal for debugging because they record what happened at a specific point in time.
+
+**Concrete Example:**  
+An Apache server error log might contain an entry like:  
+```
+[Mon Mar 28 10:30:01.123456 2025] [core:error] [pid 1234] [client 192.168.1.100:54321] AH00126: Invalid URI in request GET /invalid HTTP/1.1
+```
+This entry shows that a client made a request to an invalid URI. By examining such logs, engineers can pinpoint misconfigurations or misuse in client requests, which is invaluable when troubleshooting errors.
+
+#### 5.6.3.b Metrics
+
+**Description:**  
+Metrics are numerical data points that capture system performance over time—such as response times, error rates, or resource usage. They help you detect anomalies and trigger alerts when performance deviates from the norm.
+
+**Concrete Example:**  
+Imagine you have a Prometheus dashboard monitoring an e-commerce site's checkout endpoint. The graph suddenly shows that response times have increased from an average of 200ms to 1200ms, along with a spike in HTTP 500 errors. This alert indicates a performance issue, prompting further investigation into the underlying cause.
+
+#### 5.6.3.c Tracing
+
+**Description:**  
+Tracing enables you to follow the path of a request through various services in a distributed system. It provides a visual map of each service involved and the latency incurred at each step, helping to identify where bottlenecks or errors occur.
+
+**Concrete Example:**  
+Using a distributed tracing system like Jaeger, you trace a user request that begins at an API gateway, flows through a product service, and then to a payment service. The trace reveals that while the API gateway and product service are responding quickly, the payment service is introducing an 800ms delay. This pinpointed delay helps developers focus their troubleshooting efforts on the payment service.
+
+#### How the 3 Pillars Overlap and Complement Each Other
+
+The table below summarizes how each pillar is used, provides a concrete example, and explains how they work together to provide a complete picture of your system's health:
+
+| **Observability Pillar** | **Primary Use Cases**                                   | **Concrete Example**                                                                                                                                   | **How It Complements Others**                                                                                                                                             |
+|--------------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Logging**              | Capturing detailed event-level information; debugging specific errors. | Apache error log entry showing an invalid URI request and 500 errors.                                                                                 | Provides granular context when a metric alert triggers further investigation; logs often include trace IDs that correlate with distributed tracing data.             |
+| **Metrics**              | Monitoring performance and system health; triggering alerts. | Prometheus graph showing a spike in checkout response times (200ms to 1200ms) and increased HTTP 500 error rates.                                      | Alerts teams to anomalies that need deeper analysis; metric spikes can be correlated with log events and traced through distributed systems for root cause analysis.    |
+| **Tracing**              | Tracking the journey of a request; identifying latency and bottlenecks. | Jaeger trace revealing an 800ms delay in the payment service, causing overall request latency.                                                        | Bridges gaps between logs and metrics by providing an end-to-end view of a request’s path; helps in correlating log entries and metric data to specific points in the flow. |
+
+By combining these three pillars, you gain a comprehensive understanding of both what is happening in your system (through logs and metrics) and why it might be happening (through tracing the request flow). This integrated approach makes troubleshooting more efficient and effective.
 
 ## 5.7 Other General Decomposition
 
-### 5.7.1 Process flow (this THEN that)
+### 5.7.1 Process Flow (this THEN that)
+
+**What It Means:**  
+Process flow decomposition is all about the sequence of operations. You map out a series of steps that occur one after the other—each step triggers the next.
+
+**When to Use:**  
+- **Sequential tasks:** For instance, user registration often involves entering details → verifying email → activating the account.
+- **Workflows:** Any process where the output of one step is the input of the next.
+
+**Example:**  
+Consider a file upload system:
+1. **Receive file**
+2. **Validate file type and size**
+3. **Store file on the server**
+4. **Update the database with file info**
+
+Each step flows into the next in a clear, linear progression.
 
 ### 5.7.2 Components (this AND that)
 
+**What It Means:**  
+Component decomposition focuses on dividing the system into distinct parts or modules that operate together. These parts often work concurrently or independently but must be integrated for the full system to function.
+
+**When to Use:**  
+- **Modular systems:** For example, breaking down an e-commerce site into separate modules such as user management, product catalog, and order processing.
+- **Parallel development:** When different teams work on different aspects concurrently.
+
+**Example:**  
+In a web application:
+- **Frontend:** Handles user interactions and presentation.
+- **Backend:** Manages business logic and data storage.
+- **API Gateway:** Facilitates communication between the frontend and backend.
+
+Each component is developed and tested independently before being integrated.
+
 ### 5.7.3 Options (this OR that)
 
+**What It Means:**  
+Option decomposition addresses decisions within a process—identifying alternative paths or methods that can achieve the same goal. Essentially, you provide a decision point: choose option A or option B.
+
+**When to Use:**  
+- **Feature toggles:** An application might support two different methods for authentication—password-based or biometric.
+- **Fallback strategies:** Handling cases where, if one solution fails, an alternative can be used.
+
+**Example:**  
+A search functionality might have:
+- **Option A:** Use a relational database query.
+- **Option B:** Use a dedicated search engine like Elasticsearch.
+
+The system might dynamically choose based on load or user preference.
+
 ### 5.7.4 Other
+
+**What It Means:**  
+This category covers decompositions that don’t neatly fit into the previous types. It might include:
+- **Hybrid approaches:** Combining elements of process flow, components, and options.
+- **Domain-specific decompositions:** For example, breaking down a machine learning pipeline into data preprocessing, model training, and evaluation.
+- **Cross-cutting concerns:** Addressing aspects like logging, security, or error handling that apply across multiple layers of a system.
+
+**When to Use:**  
+- **Complex systems:** Where a single decomposition method isn’t sufficient.
+- **Context-specific tasks:** When unique business rules or domain knowledge require a tailored approach.
+
+**Example:**  
+In a microservices architecture:
+- **Process Flow:** Each service might have a clear sequential process (e.g., order processing in an e-commerce system).
+- **Components:** Different microservices (user, order, payment) act as independent components.
+- **Options:** Each service might offer alternative ways to process requests depending on real-time data or availability.
+- **Other:** Implementing a centralized logging or monitoring system that spans across all services.
+
+Each of these decomposition strategies serves different purposes, and often, a real-world problem will require a blend of these approaches. The key is to choose the method that best fits the nature of the problem and the capabilities of your team.
 
 ## 5.8 Conclusion: Low-cost trial and error
 
