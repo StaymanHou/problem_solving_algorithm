@@ -474,6 +474,8 @@ async function raceConditionExample() {
 raceConditionExample();
 ```
 
+#### Divide and conquer
+
 | **Category**                    | **Description**                                                                                         | **Common Causes / Examples**                                                                                     | **Tips / Solutions**                                                                                                        |
 |---------------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | Wrong Expected I/O              | Output doesn’t match what’s expected.                                                                   | Incorrect assumptions, flawed test cases, or misinterpreted requirements.                                        | Write clear unit tests; log and compare actual vs. expected values; double-check assumptions.                                |
