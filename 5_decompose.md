@@ -524,7 +524,7 @@ This decision centers on whether you should:
    - **Build:** Integrating a custom solution might be easier if designed in-house.  
    - **Borrow/Buy:** Ensure the solution you’re adopting has good documentation, strong community or vendor support, and plays well with your existing stack.
 
-### 5.5.2 Web / Mobile
+### 5.5.2 Build (Web / Mobile)
 
 When planning your tech stack for web or mobile applications, it's helpful to break it down into three primary layers: the frontend, the backend, and the infrastructure/operations (CI/CD).
 
@@ -567,6 +567,10 @@ When planning your tech stack for web or mobile applications, it's helpful to br
 
 - **DevOps Practices:**  
   Adopt infrastructure-as-code (e.g., Terraform), automated testing, and secure deployment practices to streamline operations and maintain system integrity.
+
+#### Project lifecycle
+
+Waterfall vs agile (Refer to Yitang PM course also refer to the book Effective Project Management by Robert K. Wysocki)
 
 ### 5.5.3 Team / Talents
 
