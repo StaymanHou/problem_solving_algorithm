@@ -177,6 +177,7 @@ def calculate_total(items):
 
 ### 5.3.5 [Bonus] Testing
 
+(See chapter 7)
 TDD vs. Testing After the Fact
 
 ## 5.4 Debugging
