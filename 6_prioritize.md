@@ -30,5 +30,8 @@ Do I have to solve this?
 
 ## resolution
 
+原则1 - 前置假设优先
+原则2 - 风险高的优先 / 风险低的优先
+原则3 - 验证单一假设
 
 [< Previous Chapter](5_decompose.md) | [Next Chapter >](7_test_and_analyze.md)
