@@ -34,4 +34,6 @@ Do I have to solve this?
 原则2 - 风险高的优先 / 风险低的优先
 原则3 - 验证单一假设
 
+ROI / Risk-Reward
+
 [< Previous Chapter](5_decompose.md) | [Next Chapter >](7_test_and_analyze.md)
